@@ -1,4 +1,6 @@
-# Awesome Dynamic Analysis
+ ![Logo](awesome.png)
+
+
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
 
 This is a collection of dynamic analysis tools and code quality checkers. Pull requests are very welcome!  
