@@ -8,8 +8,11 @@ This is a collection of dynamic analysis tools and code quality checkers. Pull r
 ## C/C++
 
 * [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C
-
-
+* [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools
+* [LLVM/Clang Sanitizers](https://github.com/google/sanitizers)
+    - [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer) - A memory error detector for C/C++
+    - [MemorySanitizer](https://github.com/google/sanitizers/wiki/MemorySanitizer) - A detector of uninitialized memory reads in C/C++ programs.
+    - [ThreadSanitizer](https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual) - A data race detector for C/C++
 
 
 ## License
