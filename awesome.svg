@@ -18,8 +18,8 @@
    sodipodi:docname="awesome.svg"
    inkscape:version="0.92.2 5c3e80d, 2017-08-06"
    inkscape:export-filename="/Users/mendler/Code/private/awesome-dynamic-analysis/awesome.png"
-   inkscape:export-xdpi="139.99713"
-   inkscape:export-ydpi="139.99713"><metadata
+   inkscape:export-xdpi="150.05557"
+   inkscape:export-ydpi="150.05557"><metadata
      id="metadata8"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
@@ -87,7 +87,7 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.47677829"
-     inkscape:cx="508.91003"
+     inkscape:cx="147.10665"
      inkscape:cy="201.70498"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -768,19 +768,19 @@
          transform="scale(1,-1)"
          id="text5206"
          y="6.8071165"
-         x="287.9086"
+         x="294.70395"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.89308548px;line-height:1.25;font-family:'Burst My Bubble';-inkscape-font-specification:'Burst My Bubble, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.12232709"
          xml:space="preserve"><tspan
            id="tspan6023"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.89308548px;font-family:SignPainter;-inkscape-font-specification:'SignPainter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1.12232709"
            y="6.8071165"
-           x="287.9086"
+           x="294.70395"
            sodipodi:role="line"><tspan
    id="tspan6013"
-   style="font-size:56.42203903px;fill:#ff0000;stroke-width:1.12232709">Awesome</tspan> Dynamic Analsysis</tspan><tspan
+   style="font-size:56.42203903px;fill:#ff0000;stroke-width:1.12232709">Awesome</tspan> Dynamic Analysis</tspan><tspan
            id="tspan6021"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:44.89308548px;font-family:SignPainter;-inkscape-font-specification:'SignPainter, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:1.12232709"
            y="66.926582"
-           x="287.9086"
+           x="294.70395"
            sodipodi:role="line"> </tspan></text>
 </g></g></svg>
