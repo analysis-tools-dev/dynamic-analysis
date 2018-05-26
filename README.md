@@ -23,3 +23,5 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 To the extent possible under law, [Matthias Endler](http://matthias-endler.de) has waived all copyright and related or neighboring rights to this work.
+
+Logo [designed by Freepik](https://www.freepik.com/free-vector/programming-background-design_1033623.htm)
