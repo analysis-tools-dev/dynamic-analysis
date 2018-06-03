@@ -20,7 +20,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 ## Binary
 
-* [angr](https://github.com/angr/angr) - Platform agnotstic binary analysis framework from UCSB.
+* [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
 * [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
 
 
