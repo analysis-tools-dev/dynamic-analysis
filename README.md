@@ -18,6 +18,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     - [MemorySanitizer](https://github.com/google/sanitizers/wiki/MemorySanitizer) - A detector of uninitialized memory reads in C/C++ programs.
     - [ThreadSanitizer](https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual) - A data race detector for C/C++
 
+
+## Python
+
+* [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
+
 ## Binary
 
 * [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
