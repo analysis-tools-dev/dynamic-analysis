@@ -8,6 +8,13 @@ This is a collection of dynamic analysis tools and code quality checkers. Pull r
 Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).  
 
 
+## Binary
+
+* [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
+* [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
+
+
+
 ## C/C++
 
 * [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
@@ -23,10 +30,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 * [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
 
-## Binary
-
-* [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
-* [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
 
 
 ## License
