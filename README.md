@@ -7,6 +7,8 @@ This is a collection of dynamic analysis tools and code quality checkers. Pull r
 **Note: :copyright: stands for proprietary software. All other tools are Open Source.**  
 Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).  
 
+## Abap
+* [abapOpenChecks](https://github.com/larshp/abapOpenChecks) - Enhances the SAP Code Inspector with new and customizable checks.
 
 ## Binary
 
