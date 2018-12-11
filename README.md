@@ -27,7 +27,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 ## Java
 
-* [Java PathFinder](https://github.com/javapathfinder/jpf-core) An extensible software model checking framework for Java bytecode programs.
+* [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
 
 
 
