@@ -25,6 +25,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     - [MemorySanitizer](https://github.com/google/sanitizers/wiki/MemorySanitizer) - A detector of uninitialized memory reads in C/C++ programs.
     - [ThreadSanitizer](https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual) - A data race detector for C/C++
 
+## Java
+
+* [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
+
+
 
 ## Python
 
