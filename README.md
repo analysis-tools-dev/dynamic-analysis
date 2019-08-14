@@ -1,19 +1,15 @@
  ![Logo](awesome.png)
 
-
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
 
 This is a collection of dynamic analysis tools and code quality checkers. Pull requests are very welcome!  
 **Note: :copyright: stands for proprietary software. All other tools are Open Source.**  
 Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).  
 
-
 ## Binary
 
 * [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
 * [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
-
-
 
 ## C/C++
 
@@ -29,14 +25,23 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 ## Java
 
 * [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
-
-
+* [Parasoft Jtest](https://www.parasoft.com/products/jtest) :copyright: - Jtest is an automated Java software testing and static analysis product that is made by Parasoft. The product includes technology for Data-flow analysis Unit test-case generation and execution, static analysis, regression testing, code coverage, and runtime error detection.
 
 ## Python
 
 * [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
 
+## Visual Basic
 
+* [VB Watch](www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+
+## Multiple languages
+
+* [AppScan Standard](https://www.hcltechsw.com/wps/portal/products/appscan/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QO8nQ0MnQ0C_F3MnA0CHX2dvYN9woxNvEz0w1EVWDgGuQAVeLpbBvu6Gxl4m-hHUaLfxJQ4_QY4gKMBifZjKojCb3y4fhSqFe6Bpk5AEwIMTNyMfYzdfczQFWAJIrwKQGFAyBUFuaGhoREGmZ7piooAwLgEZw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/hcl+software+content/products/appscan/offerings/standard) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+* [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
+* [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
+* [Minded Security BlueClosure](https://www.mindedsecurity.com/index.php/products/blueclosure) :copyright: - Dynamic web application security scanner. It uses dynamic data tainting in order to understand if a DOM XSS is exploitable and uses the browser JavaScript engine for understanding the code.
+* [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 ## License
 
