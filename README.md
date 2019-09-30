@@ -10,6 +10,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 * [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
 * [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
+* [DynamoRIO](http://www.dynamorio.org/) - is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
+* [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
+
 
 ## C/C++
 
@@ -30,6 +33,12 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 ## Python
 
 * [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
+
+## .NET
+
+* [Microsoft IntelliTest](https://docs.microsoft.com/en-us/visualstudio/test/intellitest-manual/getting-started?view=vs-2019) - Generate a candidate suite of tests for your .NET code.
+* [Pex and Moles](https://www.microsoft.com/en-us/research/project/pex-and-moles-isolation-and-white-box-unit-testing-for-net/) - Pex automatically generates test suites with high code coverage using automated white box analysis.
+
 
 ## Visual Basic
 
