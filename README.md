@@ -45,7 +45,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 ## Visual Basic
 
-* [VB Watch](www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+* [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
 
 ## Multiple languages
 
