@@ -19,7 +19,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 * [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
 * [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C
 * [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools
-* [LDRA](https://ldra.com/) :copyright: - a tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
+* [LDRA](https://ldra.com) :copyright: - a tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 * [LLVM/Clang Sanitizers](https://github.com/google/sanitizers)
     - [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer) - A memory error detector for C/C++
     - [MemorySanitizer](https://github.com/google/sanitizers/wiki/MemorySanitizer) - A detector of uninitialized memory reads in C/C++ programs.
