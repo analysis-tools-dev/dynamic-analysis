@@ -1,10 +1,22 @@
- ![Logo](awesome.png)
+ <!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools.yml` instead. 🚨🚨 -->
 
+ <a href="https://analysis-tools.dev/">
+   <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.svg" />
+ </a>
+
+This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more.  
+The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings and user comments for each tool.
+ 
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
 
-This is a collection of dynamic analysis tools and code quality checkers. Pull requests are very welcome!  
-**Note: :copyright: stands for proprietary software. All other tools are Open Source.**  
-Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).  
+Meaning of symbols:  
+
+- :copyright: stands for proprietary software. All other tools are Open Source.
+- :information_source: indicates that the community does not recommend to use this tool for new projects anymore. The icon links to the discussion issue.
+- :warning: means that this tool was not updated for more than 6 months, or the repo was archived.
+
+Pull requests are very welcome!  
+Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).
 
 ## Binary
 
