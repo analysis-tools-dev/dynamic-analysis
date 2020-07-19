@@ -6,10 +6,20 @@
 
 This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more.  
 The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings and user comments for each tool.
- 
+
+## What is Dynamic Analysis?
+
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
 
-Meaning of symbols:  
+## Sponsors
+
+This project would not be possible without the generous support of our sponsors.
+
+<a href="https://deepcode.ai"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/deepcode.svg" /></a>
+
+If you also want to support this project, head over to our [Github sponsors page](https://github.com/sponsors/analysis-tools-dev).
+
+## Meaning of Symbols:  
 
 - :copyright: stands for proprietary software. All other tools are Open Source.
 - :information_source: indicates that the community does not recommend to use this tool for new projects anymore. The icon links to the discussion issue.
@@ -24,7 +34,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 * [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
 * [DynamoRIO](http://www.dynamorio.org/) - is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
 * [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
-
 
 ## C/C++
 
