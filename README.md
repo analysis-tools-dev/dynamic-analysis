@@ -62,6 +62,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 ## Rust
 
+* [MIRI](https://github.com/rust-lang/miri) -  An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
 * [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
 
 ## Visual Basic
