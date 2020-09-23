@@ -58,6 +58,10 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 * [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
 * [Parasoft Jtest](https://www.parasoft.com/products/jtest) :copyright: - Jtest is an automated Java software testing and static analysis product that is made by Parasoft. The product includes technology for Data-flow analysis Unit test-case generation and execution, static analysis, regression testing, code coverage, and runtime error detection.
 
+## JavaScript
+
+* [Iroh.js](https://github.com/maierfelix/Iroh) -A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+
 ## Python
 
 * [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
