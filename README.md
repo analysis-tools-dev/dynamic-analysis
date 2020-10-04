@@ -65,6 +65,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 ## JavaScript
 
 * [Iroh.js](https://github.com/maierfelix/Iroh) -A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+* [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript. 
 
 ## Python
 
