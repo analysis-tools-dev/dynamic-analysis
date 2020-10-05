@@ -1,0 +1,13 @@
+name: stuck
+categories:
+  - linter
+tags:
+  - rust
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/jonhoo/stuck'
+homepage: 'https://github.com/jonhoo/stuck'
+description: >-
+  provides a visualization for quickly identifying common bottlenecks in
+  running, asynchronous, and concurrent applications.

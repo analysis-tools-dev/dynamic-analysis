@@ -1,0 +1,11 @@
+name: Java PathFinder
+categories:
+  - linter
+tags:
+  - java
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/javapathfinder/jpf-core'
+homepage: 'https://github.com/javapathfinder/jpf-core'
+description: An extensible software model checking framework for Java bytecode programs.

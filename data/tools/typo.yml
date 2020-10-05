@@ -1,0 +1,11 @@
+name: typo
+categories:
+  - linter
+tags:
+  - python
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/aldanor/typo'
+homepage: 'https://github.com/aldanor/typo'
+description: Runtime Type Checking for Python 3.

@@ -1,0 +1,14 @@
+name: MIRI
+categories:
+  - linter
+tags:
+  - rust
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/rust-lang/miri'
+homepage: 'https://github.com/rust-lang/miri'
+description: >-
+  An interpreter for Rust's mid-level intermediate representation, which
+  can detect certain classes of undefined behavior like out-of-bounds memory accesses
+  and use-after-free.

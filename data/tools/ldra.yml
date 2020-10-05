@@ -1,0 +1,13 @@
+name: LDRA
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+license: proprietary
+types:
+  - cli
+homepage: 'https://ldra.com'
+description: >-
+  A tool suite incuding dynamic analysis and test to various standards
+  can ensure test coverage to 100% op-code, branch & decsion coverage.

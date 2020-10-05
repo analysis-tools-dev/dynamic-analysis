@@ -1,0 +1,14 @@
+name: Iroh.js
+categories:
+  - linter
+tags:
+  - javascript
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/maierfelix/Iroh'
+homepage: 'https://github.com/maierfelix/Iroh'
+description: >-
+  A dynamic code analysis tool for JavaScript. Iroh allows to record your
+  code flow in realtime, intercept runtime informations and manipulate program behaviour
+  on the fly.

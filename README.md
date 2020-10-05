@@ -1,6 +1,6 @@
- <!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools.yml` instead. 🚨🚨 -->
+<!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools/` instead. 🚨🚨 -->
 
- <a href="https://analysis-tools.dev/">
+ <a href="http://analysis-tools.dev/">
    <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.png" />
  </a>
 
@@ -10,7 +10,6 @@ The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based
 ## What is Dynamic Analysis?
 
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
-
 ## Sponsors
 
 This project would not be possible without the generous support of our sponsors.
@@ -26,80 +25,134 @@ This project would not be possible without the generous support of our sponsors.
 
 If you also want to support this project, head over to our [Github sponsors page](https://github.com/sponsors/analysis-tools-dev).
 
-## Meaning of Symbols:  
+## Meaning of Symbols:
 
 - :copyright: stands for proprietary software. All other tools are Open Source.
 - :information_source: indicates that the community does not recommend to use this tool for new projects anymore. The icon links to the discussion issue.
-- :warning: means that this tool was not updated for more than 6 months, or the repo was archived.
+- :warning: means that this tool was not updated for more than 1 year, or the repo was archived.
 
 Pull requests are very welcome!  
 Also check out the sister project, [awesome-static-analysis](https://github.com/mre/awesome-static-analysis).
 
-## Binary
+## Table of Contents
 
-* [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
-* [TRITON](https://github.com/JonathanSalwan/Triton) - Dynamic Binary Analysis for x86 binaries.
-* [DynamoRIO](http://www.dynamorio.org/) - is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
-* [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
+#### [Programming Languages](#programming-languages-1)
 
-## Container
+<details>
+ <summary>Show languages</summary>
+  <!-- Please use HTML syntax here so that it works for Github and mkdocs -->
+  <ul>
+    <li><a href="#dotnet">.NET</a></li>
+    <li><a href="#c">C</a></li>
+    <li><a href="#cpp">C++</a></li>
+    <li><a href="#java">Java</a></li>
+    <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#python">Python</a></li>
+    <li><a href="#rust">Rust</a></li>
+    <li><a href="#vbasic">Visual Basic</a></li>
+    </ul>
+</details>
 
-* [cadvisor](https://github.com/google/cadvisor) - Analyzes resource usage and performance characteristics of running containers. 
+#### [Multiple languages](#multiple-languages-1)
 
-## C/C++
+#### [Other](#other-1)
 
-* [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
-* [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C
-* [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools
-* [LDRA](https://ldra.com) :copyright: - a tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
-* [LLVM/Clang Sanitizers](https://github.com/google/sanitizers)
-    - [AddressSanitizer](https://github.com/google/sanitizers/wiki/AddressSanitizer) - A memory error detector for C/C++
-    - [MemorySanitizer](https://github.com/google/sanitizers/wiki/MemorySanitizer) - A detector of uninitialized memory reads in C/C++ programs.
-    - [ThreadSanitizer](https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual) - A data race detector for C/C++
+- [Binaries](#binary)
+  - [Containers](#container)
+  - [Security/DAST](#security)
+  
 
-## Java
+---
 
-* [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
-* [Parasoft Jtest](https://www.parasoft.com/products/jtest) :copyright: - Jtest is an automated Java software testing and static analysis product that is made by Parasoft. The product includes technology for Data-flow analysis Unit test-case generation and execution, static analysis, regression testing, code coverage, and runtime error detection.
+## Programming Languages
 
-## JavaScript
+<h2 id="dotnet">.NET</h2>
 
-* [Iroh.js](https://github.com/maierfelix/Iroh) -A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
-* [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript. 
+- [Microsoft IntelliTest](https://docs.microsoft.com/en-us/visualstudio/test/intellitest-manual/getting-started?view=vs-2019) - Generate a candidate suite of tests for your .NET code.
+- [Pex and Moles](https://www.microsoft.com/en-us/research/project/pex-and-moles-isolation-and-white-box-unit-testing-for-net/) - Pex automatically generates test suites with high code coverage using automated white box analysis.
 
-## Python
 
-* [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3
+<h2 id="c">C</h2>
 
-## .NET
+- [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
+- [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
+- [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
+- [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
-* [Microsoft IntelliTest](https://docs.microsoft.com/en-us/visualstudio/test/intellitest-manual/getting-started?view=vs-2019) - Generate a candidate suite of tests for your .NET code.
-* [Pex and Moles](https://www.microsoft.com/en-us/research/project/pex-and-moles-isolation-and-white-box-unit-testing-for-net/) - Pex automatically generates test suites with high code coverage using automated white box analysis.
 
-## Rust
+<h2 id="cpp">C++</h2>
 
-* [MIRI](https://github.com/rust-lang/miri) -  An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
-* [puffin](https://github.com/EmbarkStudios/puffin) - Instrumentation profiler for Rust.
-* [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
+- [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
+- [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
+- [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
+- [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
-## Visual Basic
 
-* [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+<h2 id="java">Java</h2>
+
+- [Java PathFinder](https://github.com/javapathfinder/jpf-core) - An extensible software model checking framework for Java bytecode programs.
+- [Parasoft Jtest](https://www.parasoft.com/products/jtest) :copyright: - Jtest is an automated Java software testing and static analysis product that is made by Parasoft. The product includes technology for Data-flow analysis Unit test-case generation and execution, static analysis, regression testing, code coverage, and runtime error detection.
+
+
+<h2 id="javascript">JavaScript</h2>
+
+- [Iroh.js](https://github.com/maierfelix/Iroh) - A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+- [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
+
+
+<h2 id="python">Python</h2>
+
+- [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3.
+
+
+<h2 id="rust">Rust</h2>
+
+- [MIRI](https://github.com/rust-lang/miri) - An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
+- [puffin](https://github.com/EmbarkStudios/puffin) - Instrumentation profiler for Rust.
+- [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
+
+
+<h2 id="vbasic">Visual Basic</h2>
+
+- [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+
 
 ## Multiple languages
 
-* [AppScan Standard](https://www.hcltechsw.com/wps/portal/products/appscan/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QO8nQ0MnQ0C_F3MnA0CHX2dvYN9woxNvEz0w1EVWDgGuQAVeLpbBvu6Gxl4m-hHUaLfxJQ4_QY4gKMBifZjKojCb3y4fhSqFe6Bpk5AEwIMTNyMfYzdfczQFWAJIrwKQGFAyBUFuaGhoREGmZ7piooAwLgEZw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/hcl+software+content/products/appscan/offerings/standard) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
-* [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
-* [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
-* [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
-* [Minded Security BlueClosure](https://www.mindedsecurity.com/index.php/products/blueclosure) :copyright: - Dynamic web application security scanner. It uses dynamic data tainting in order to understand if a DOM XSS is exploitable and uses the browser JavaScript engine for understanding the code.
-* [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+- [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
+- [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
+- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+
+
+## Other
+
+
+
+<h2 id="binary">Binaries</h2>
+
+- [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
+- [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
+- [DynamoRIO](http://www.dynamorio.org/) - Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
+- [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
+- [TRITON](https://triton.quarkslab.com/) - Dynamic Binary Analysis for x86 binaries.
+
+
+<h2 id="container">Containers</h2>
+
+- [cadvisor](https://github.com/google/cadvisor) - Analyzes resource usage and performance characteristics of running containers.
+
+
+<h2 id="security">Security/DAST</h2>
+
+- [AppScan Standard](https://www.hcltechsw.com/wps/portal/products/appscan/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QO8nQ0MnQ0C_F3MnA0CHX2dvYN9woxNvEz0w1EVWDgGuQAVeLpbBvu6Gxl4m-hHUaLfxJQ4_QY4gKMBifZjKojCb3y4fhSqFe6Bpk5AEwIMTNyMfYzdfczQFWAJIrwKQGFAyBUFuaGhoREGmZ7piooAwLgEZw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/hcl+software+content/products/appscan/offerings/standard) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+- [Minded Security BlueClosure](https://www.mindedsecurity.com/index.php/products/blueclosure) :copyright: - Dynamic web application security scanner. It uses dynamic data tainting in order to understand if a DOM XSS is exploitable and uses the browser JavaScript engine for understanding the code.
+
 
 ## License
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 To the extent possible under law, [Matthias Endler](https://endler.dev) has waived all copyright and related or neighboring rights to this work.
-
-Logo [designed by Freepik](https://www.freepik.com/free-vector/programming-background-design_1033623.htm)
-
+Title image [Designed by Freepik](http://www.freepik.com).

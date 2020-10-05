@@ -1,0 +1,14 @@
+name: Gcov
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+  - fortran
+license: MIT License
+types:
+  - cli
+homepage: 'https://gcc.gnu.org/onlinedocs/gcc/Gcov.html'
+description: >-
+  GNU source code coverage program. Code coverage tool and profiling tool
+  which is part of the GCC. Supports C, C++, Fortran.

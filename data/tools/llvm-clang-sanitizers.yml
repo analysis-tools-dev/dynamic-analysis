@@ -1,0 +1,17 @@
+name: LLVM/Clang Sanitizers
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/google/sanitizers'
+homepage: 'https://github.com/google/sanitizers'
+description: >-
+    <ul>
+    <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li>
+    <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li>
+    <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li>
+    </ul>

@@ -1,0 +1,12 @@
+name: AppScan Standard
+categories:
+  - linter
+tags:
+  - security
+license: proprietary
+types:
+  - cli
+homepage: 'https://www.hcltechsw.com/wps/portal/products/appscan/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QO8nQ0MnQ0C_F3MnA0CHX2dvYN9woxNvEz0w1EVWDgGuQAVeLpbBvu6Gxl4m-hHUaLfxJQ4_QY4gKMBifZjKojCb3y4fhSqFe6Bpk5AEwIMTNyMfYzdfczQFWAJIrwKQGFAyBUFuaGhoREGmZ7piooAwLgEZw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/hcl+software+content/products/appscan/offerings/standard'
+description: >-
+  HCL's AppScan is a dynamic application security testing suite ([previously
+  by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).

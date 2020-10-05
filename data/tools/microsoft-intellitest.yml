@@ -1,0 +1,10 @@
+name: Microsoft IntelliTest
+categories:
+  - linter
+tags:
+  - dotnet
+license: MIT License
+types:
+  - cli
+homepage: 'https://docs.microsoft.com/en-us/visualstudio/test/intellitest-manual/getting-started?view=vs-2019'
+description: Generate a candidate suite of tests for your .NET code.

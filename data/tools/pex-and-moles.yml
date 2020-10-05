@@ -1,0 +1,12 @@
+name: Pex and Moles
+categories:
+  - linter
+tags:
+  - dotnet
+license: MIT License
+types:
+  - cli
+homepage: 'https://www.microsoft.com/en-us/research/project/pex-and-moles-isolation-and-white-box-unit-testing-for-net/'
+description: >-
+  Pex automatically generates test suites with high code coverage using
+  automated white box analysis.
