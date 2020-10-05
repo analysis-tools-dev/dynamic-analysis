@@ -256,7 +256,7 @@
 - name: Protocol Buffers
   tag: protobuf
   type: other
-- name: Security
+- name: Security/DAST
   tag: security
   type: other
 - name: Support
