@@ -1,0 +1,13 @@
+name: VB Watch
+categories:
+  - linter
+tags:
+  - vbasic
+license: proprietary
+types:
+  - cli
+homepage: 'https://www.aivosto.com/vbwatch.html'
+description: >-
+  Profiler, Protector and Debugger for VB6. Profiler measures performance
+  and test coverage. Protector implements robust error handling. Debugger helps monitor
+  your executables.

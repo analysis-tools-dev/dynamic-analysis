@@ -1,0 +1,11 @@
+name: angr
+categories:
+  - linter
+tags:
+  - binary
+license: BSD-2-Clause License
+types:
+  - cli
+source: 'https://github.com/angr/angr'
+homepage: 'https://github.com/angr/angr'
+description: Platform agnostic binary analysis framework from UCSB.

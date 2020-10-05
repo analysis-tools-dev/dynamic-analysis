@@ -1,0 +1,14 @@
+name: Parasoft Jtest
+categories:
+  - linter
+tags:
+  - java
+license: proprietary
+types:
+  - cli
+homepage: 'https://www.parasoft.com/products/jtest'
+description: >-
+  Jtest is an automated Java software testing and static analysis product
+  that is made by Parasoft. The product includes technology for Data-flow analysis
+  Unit test-case generation and execution, static analysis, regression testing, code
+  coverage, and runtime error detection.

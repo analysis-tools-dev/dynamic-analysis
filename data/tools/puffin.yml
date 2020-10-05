@@ -1,0 +1,11 @@
+name: puffin
+categories:
+  - linter
+tags:
+  - rust
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/EmbarkStudios/puffin'
+homepage: 'https://github.com/EmbarkStudios/puffin'
+description: Instrumentation profiler for Rust.

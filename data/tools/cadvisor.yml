@@ -1,0 +1,11 @@
+name: cadvisor
+categories:
+  - linter
+tags:
+  - container
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/google/cadvisor'
+homepage: 'https://github.com/google/cadvisor'
+description: Analyzes resource usage and performance characteristics of running containers.

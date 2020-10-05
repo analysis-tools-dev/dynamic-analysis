@@ -1,0 +1,13 @@
+name: Dr. Memory
+categories:
+  - linter
+tags:
+  - binary
+license: LGPL License
+types:
+  - cli
+source: 'https://github.com/DynamoRIO/drmemory'
+homepage: 'https://drmemory.org/'
+description: >-
+  Dr. Memory is a memory monitoring tool capable of identifying memory-related
+  programming errors ([Github](https://github.com/DynamoRIO/drmemory)).

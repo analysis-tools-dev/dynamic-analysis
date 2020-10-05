@@ -1,0 +1,11 @@
+name: Jalangi2
+categories:
+  - linter
+tags:
+  - javascript
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/Samsung/jalangi2'
+homepage: 'https://github.com/Samsung/jalangi2'
+description: Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.

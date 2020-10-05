@@ -1,0 +1,11 @@
+name: TRITON
+categories:
+  - linter
+tags:
+  - binary
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/JonathanSalwan/Triton'
+homepage: 'https://triton.quarkslab.com/'
+description: Dynamic Binary Analysis for x86 binaries.

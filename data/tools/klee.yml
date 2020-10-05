@@ -1,0 +1,12 @@
+name: KLEE
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/klee/klee'
+homepage: 'https://github.com/klee/klee'
+description: Symbolic virtual machine built on top of the LLVM compiler infrastructure.

@@ -1,0 +1,14 @@
+name: Code Pulse
+categories:
+  - linter
+tags:
+  - dotnet
+  - java
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/codedx/codepulse'
+homepage: 'http://code-pulse.com/'
+description: >-
+  Code Pulse is a free real-time code coverage tool for penetration testing
+  activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).

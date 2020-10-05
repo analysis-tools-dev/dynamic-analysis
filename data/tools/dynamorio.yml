@@ -1,0 +1,13 @@
+name: DynamoRIO
+categories:
+  - linter
+tags:
+  - binary
+license: BSD License
+types:
+  - cli
+source: 'https://github.com/DynamoRIO/dynamorio'
+homepage: 'http://www.dynamorio.org/'
+description: >-
+  Is a runtime code manipulation system that supports code transformations
+  on any part of a program, while it executes.
