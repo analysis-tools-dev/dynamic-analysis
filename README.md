@@ -74,6 +74,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 <h2 id="c">C</h2>
 
+- [CHAP](https://github.com/vmware/chap) - Analyzes un-instrumented ELF core files for leaks, memory growth, and corruption. It helps explain memory growth, can identify some forms of corruption, and  supplements a debugger by giving the status of various memory locations.
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
 - [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
@@ -83,6 +84,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 <h2 id="cpp">C++</h2>
 
+- [CHAP](https://github.com/vmware/chap) - Analyzes un-instrumented ELF core files for leaks, memory growth, and corruption. It helps explain memory growth, can identify some forms of corruption, and  supplements a debugger by giving the status of various memory locations.
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
 - [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
