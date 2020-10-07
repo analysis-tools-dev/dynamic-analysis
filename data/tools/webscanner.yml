@@ -1,0 +1,12 @@
+name: WebScanner
+categories:
+  - linter
+tags:
+  - security
+license: proprietary
+types:
+  - cli
+homepage: 'https://www.defensecode.com/web-security-scanner-dast/'
+description: >-
+  WebScanner is a DAST solution for comprehensive security audits of active
+  web applications.
