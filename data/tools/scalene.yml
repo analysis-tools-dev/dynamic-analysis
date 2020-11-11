@@ -1,0 +1,11 @@
+name: Scalene
+categories:
+  - profiler
+tags:
+  - python
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/emeryberger/scalene'
+homepage: 'https://github.com/emeryberger/scalene'
+description: A high-performance, high-precision CPU and memory profiler for Python 
