@@ -76,9 +76,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 - [CHAP](https://github.com/vmware/chap) - Analyzes un-instrumented ELF core files for leaks, memory growth, and corruption. It helps explain memory growth, can identify some forms of corruption, and  supplements a debugger by giving the status of various memory locations.
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
-- [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
+- [LDRA](https://ldra.com) :copyright: - A tool suite including dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) :warning: - An interpreter for finding subtle bugs in programs written in standard C.
 - [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
 
@@ -86,9 +86,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 - [CHAP](https://github.com/vmware/chap) - Analyzes un-instrumented ELF core files for leaks, memory growth, and corruption. It helps explain memory growth, can identify some forms of corruption, and  supplements a debugger by giving the status of various memory locations.
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
-- [LDRA](https://ldra.com) :copyright: - A tool suite incuding dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
+- [LDRA](https://ldra.com) :copyright: - A tool suite including dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) :warning: - An interpreter for finding subtle bugs in programs written in standard C.
 - [Valgrind](http://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
 
@@ -100,13 +100,14 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 <h2 id="javascript">JavaScript</h2>
 
-- [Iroh.js](https://github.com/maierfelix/Iroh) - A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+- [Iroh.js](https://github.com/maierfelix/Iroh) :warning: - A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
 - [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
 
 
 <h2 id="python">Python</h2>
 
-- [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3.
+- [Scalene](https://github.com/emeryberger/scalene) - A high-performance, high-precision CPU and memory profiler for Python
+- [typo](https://github.com/aldanor/typo) :warning: - Runtime Type Checking for Python 3.
 
 
 <h2 id="rust">Rust</h2>
