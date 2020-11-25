@@ -1,0 +1,11 @@
+name: CrossHair
+categories:
+  - linter
+tags:
+  - python
+license: MIT License
+types:
+  - cli
+source: 'https://github.com/pschanely/CrossHair'
+homepage: 'https://github.com/pschanely/CrossHair'
+description: Symbolic execution engine for testing Python contracts.
