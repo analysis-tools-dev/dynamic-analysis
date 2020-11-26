@@ -1,0 +1,15 @@
+name: icontract
+categories:
+  - linter
+tags:
+  - python
+license: MIT License
+types:
+  - library
+source: 'https://github.com/Parquery/icontract'
+homepage: 'https://github.com/Parquery/icontract'
+description: |
+  Design-by-contract library supporting behavioral subtyping
+
+  There is also a wider tooling around the icontract library such as 
+  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).
