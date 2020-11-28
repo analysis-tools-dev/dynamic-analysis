@@ -3,12 +3,12 @@ categories:
   - linter
 tags:
   - python
-license: MIT License
+license: MIT
 types:
   - library
 source: 'https://github.com/Parquery/icontract'
 homepage: 'https://github.com/Parquery/icontract'
-description: |
+description: >-
   Design-by-contract library supporting behavioral subtyping
 
   There is also a wider tooling around the icontract library such as 
