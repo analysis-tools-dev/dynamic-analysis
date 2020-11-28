@@ -107,6 +107,8 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 <h2 id="python">Python</h2>
 
 - [CrossHair](https://github.com/pschanely/CrossHair) - Symbolic execution engine for testing Python contracts.
+- [icontract](https://github.com/Parquery/icontract) - Design-by-contract library supporting behavioral subtyping
+There is also a wider tooling around the icontract library such as  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).
 - [Scalene](https://github.com/emeryberger/scalene) - A high-performance, high-precision CPU and memory profiler for Python
 - [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3.
 
