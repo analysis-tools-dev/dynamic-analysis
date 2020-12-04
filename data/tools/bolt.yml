@@ -1,0 +1,13 @@
+name: BOLT
+categories:
+  - linter
+tags:
+  - binary
+license: LLVM Release License
+types:
+  - cli
+source: 'https://github.com/facebookincubator/BOLT'
+homepage: 'https://github.com/facebookincubator/BOLT'
+description:  >-
+  Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries 
+  with profile guided permutation of linking to improve cache efficiency
