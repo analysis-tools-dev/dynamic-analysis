@@ -58,6 +58,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 #### [Other](#other-1)
 
 - [Binaries](#binary)
+  - [Bytecode/IR](#bytecode)
   - [Containers](#container)
   - [Security/DAST](#security)
   
@@ -145,6 +146,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [llvm-propeller](https://github.com/google/llvm-propeller) - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
 - [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
 - [TRITON](https://triton.quarkslab.com/) - Dynamic Binary Analysis for x86 binaries.
+
+
+<h2 id="bytecode">Bytecode/IR</h2>
+
+- [souper](https://github.com/google/souper) - optimize LLVM IR with SMT solvers
 
 
 <h2 id="container">Containers</h2>
