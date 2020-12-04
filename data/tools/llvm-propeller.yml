@@ -1,0 +1,13 @@
+name: llvm-propeller
+categories:
+  - linter
+tags:
+  - binary
+license: Apache 2.0
+types:
+  - cli
+source: 'https://github.com/google/llvm-propeller'
+homepage: 'https://github.com/google/llvm-propeller'
+description: >-
+  Profile guided hot/cold function splitting to improve cache efficiency.
+  An alternative to BOLT by Facebook
