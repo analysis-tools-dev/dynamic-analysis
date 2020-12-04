@@ -139,8 +139,10 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="binary">Binaries</h2>
 
 - [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
+- [BOLT](https://github.com/facebookincubator/BOLT) - Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
 - [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
 - [DynamoRIO](http://www.dynamorio.org/) - Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
+- [llvm-propeller](https://github.com/google/llvm-propeller) - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
 - [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
 - [TRITON](https://triton.quarkslab.com/) - Dynamic Binary Analysis for x86 binaries.
 
