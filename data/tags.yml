@@ -187,6 +187,9 @@
 - name: Binaries
   tag: binary
   type: other
+- name: Bytecode/IR
+  tag: bytecode
+  type: other  
 - name: More collections
   tag: collection
   type: other
