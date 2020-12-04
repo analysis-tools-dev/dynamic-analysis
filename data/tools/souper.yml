@@ -1,0 +1,11 @@
+name: souper
+categories:
+  - linter
+tags:
+  - bytecode
+license: Apache 2.0
+types:
+  - cli
+source: 'https://github.com/google/souper'
+homepage: 'https://github.com/google/souper'
+description: optimize LLVM IR with SMT solvers
