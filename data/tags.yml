@@ -226,6 +226,9 @@
 - name: JSON
   tag: json
   type: other
+- name: Laravel
+  tag: laravel
+  type: other
 - name: LaTeX
   tag: latex
   type: other
