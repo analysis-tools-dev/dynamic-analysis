@@ -161,7 +161,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 
 <h2 id="security">Security/DAST</h2>
 
-- [AppScan Standard](https://www.hcltechsw.com/wps/portal/products/appscan/home/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi_QO8nQ0MnQ0C_F3MnA0CHX2dvYN9woxNvEz0w1EVWDgGuQAVeLpbBvu6Gxl4m-hHUaLfxJQ4_QY4gKMBifZjKojCb3y4fhSqFe6Bpk5AEwIMTNyMfYzdfczQFWAJIrwKQGFAyBUFuaGhoREGmZ7piooAwLgEZw!!/?1dmy&urile=wcm%3apath%3a/wps/wcm/connect/hcl+software+content/products/appscan/offerings/standard) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+- [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
 - [Minded Security BlueClosure](https://www.blueclosure.com) :copyright: - Dynamic web application security scanner. It uses dynamic data tainting in order to understand if a DOM XSS is exploitable and uses the browser JavaScript engine for understanding the code.
 - [WebScanner](https://www.defensecode.com/web-security-scanner-dast/) :copyright: - WebScanner is a DAST solution for comprehensive security audits of active web applications.
 
