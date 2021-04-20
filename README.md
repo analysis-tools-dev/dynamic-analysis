@@ -57,10 +57,12 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 #### [Other](#other-1)
 
-- [Binaries](#binary)
+- [API](#api)
+  - [Binaries](#binary)
   - [Bytecode/IR](#bytecode)
   - [Containers](#container)
   - [Security/DAST](#security)
+  - [Web](#web)
   
 
 ---
@@ -138,6 +140,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 
 
 
+<h2 id="api">API</h2>
+
+- [Smartbear](https://smartbear.com/) :copyright: - Test automation and performance testing platform
+
+
 <h2 id="binary">Binaries</h2>
 
 - [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
@@ -164,6 +171,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
 - [Minded Security BlueClosure](https://www.blueclosure.com) :copyright: - Dynamic web application security scanner. It uses dynamic data tainting in order to understand if a DOM XSS is exploitable and uses the browser JavaScript engine for understanding the code.
 - [WebScanner](https://www.defensecode.com/web-security-scanner-dast/) :copyright: - WebScanner is a DAST solution for comprehensive security audits of active web applications.
+
+
+<h2 id="web">Web</h2>
+
+- [Smartbear](https://smartbear.com/) :copyright: - Test automation and performance testing platform
 
 
 ## License
