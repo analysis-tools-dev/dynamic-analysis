@@ -181,6 +181,9 @@
 - name: Visual Basic
   tag: vbasic
   type: language
+- name: API
+  tag: api
+  type: other
 - name: Build tools
   tag: buildtool
   type: other
@@ -291,6 +294,9 @@
   type: other
 - name: Writing
   tag: writing
+  type: other
+- name: Web
+  tag: web
   type: other
 - name: XML
   tag: xml
