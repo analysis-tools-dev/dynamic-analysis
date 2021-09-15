@@ -8,5 +8,5 @@ license: GNU General Public License v2
 types:
   - cli
 source: 'https://sourceware.org/git/?p=valgrind.git'
-homepage: 'http://valgrind.org/'
+homepage: 'https://valgrind.org/'
 description: An instrumentation framework for building dynamic analysis tools.
