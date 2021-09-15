@@ -1,0 +1,13 @@
+name: suture
+categories:
+  - linter
+tags:
+  - ruby
+license: MIT
+types:
+  - cli
+source: 'https://github.com/testdouble/suture'
+homepage: 'https://github.com/testdouble/suture'
+description: >-
+  A Ruby gem that helps you refactor your legacy code 
+  by the result of some old behavior with a new version.
