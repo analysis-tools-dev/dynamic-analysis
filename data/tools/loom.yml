@@ -1,0 +1,13 @@
+name: loom
+categories:
+  - linter
+tags:
+  - rust
+license: MIT
+types:
+  - cli
+source: 'https://github.com/tokio-rs/loom'
+homepage: 'https://github.com/tokio-rs/loom'
+description: >-
+  Concurrency permutation testing tool for Rust. 
+  It runs a test many times, permuting the possible concurrent executions of that test.
