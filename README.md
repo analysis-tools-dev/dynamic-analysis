@@ -47,6 +47,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#java">Java</a></li>
     <li><a href="#javascript">JavaScript</a></li>
     <li><a href="#python">Python</a></li>
+    <li><a href="#ruby">Ruby</a></li>
     <li><a href="#rust">Rust</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
     </ul>
@@ -115,8 +116,14 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3.
 
 
+<h2 id="ruby">Ruby</h2>
+
+- [suture](https://github.com/testdouble/suture) - A Ruby gem that helps you refactor your legacy code  by the result of some old behavior with a new version.
+
+
 <h2 id="rust">Rust</h2>
 
+- [loom](https://github.com/tokio-rs/loom) - Concurrency permutation testing tool for Rust.  It runs a test many times, permuting the possible concurrent executions of that test.
 - [MIRI](https://github.com/rust-lang/miri) - An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
 - [puffin](https://github.com/EmbarkStudios/puffin) - Instrumentation profiler for Rust.
 - [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
