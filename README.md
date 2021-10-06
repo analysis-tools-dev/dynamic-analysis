@@ -139,6 +139,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
 - [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
 - [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
+- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
 - [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
