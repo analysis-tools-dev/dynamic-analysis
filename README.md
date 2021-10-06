@@ -50,6 +50,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#ruby">Ruby</a></li>
     <li><a href="#rust">Rust</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
+    <li><a href="#webassembly">WebAssembly</a></li>
     </ul>
 </details>
 
@@ -134,12 +135,16 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
 
 
+<h2 id="webassembly">WebAssembly</h2>
+
+- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
+
+
 ## Multiple languages
 
 - [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
 - [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
 - [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
-- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
 - [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 

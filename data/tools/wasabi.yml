@@ -3,7 +3,6 @@ categories:
   - linter
 tags:
   - webassembly
-  - javascript
 license: Unknown
 types:
   - cli

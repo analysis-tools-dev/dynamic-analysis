@@ -181,6 +181,9 @@
 - name: Visual Basic
   tag: vbasic
   type: language
+- name: WebAssembly
+  tag: webassembly
+  type: language
 - name: API
   tag: api
   type: other
@@ -298,9 +301,6 @@
 - name: Web
   tag: web
   type: other
-- name: WebAssembly
-  tag: webassembly
-  type: language
 - name: XML
   tag: xml
   type: other
