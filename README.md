@@ -50,7 +50,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#ruby">Ruby</a></li>
     <li><a href="#rust">Rust</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
-    <li><a href="#webassembly">WebAssembly</a></li>
     </ul>
 </details>
 
@@ -64,6 +63,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
   - [Containers](#container)
   - [Security/DAST](#security)
   - [Web](#web)
+  - [WebAssembly](#webassembly)
   
 
 ---
@@ -135,11 +135,6 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
 
 
-<h2 id="webassembly">WebAssembly</h2>
-
-- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
-
-
 ## Multiple languages
 
 - [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
@@ -188,6 +183,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="web">Web</h2>
 
 - [Smartbear](https://smartbear.com/) :copyright: - Test automation and performance testing platform
+
+
+<h2 id="webassembly">WebAssembly</h2>
+
+- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
 
 
 ## License

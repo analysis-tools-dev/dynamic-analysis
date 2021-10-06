@@ -3,7 +3,7 @@ categories:
   - linter
 tags:
   - webassembly
-license: Unknown
+license: MIT
 types:
   - cli
 source: 'https://github.com/danleh/wasabi'
