@@ -1,0 +1,11 @@
+name: Wasabi
+categories:
+  - linter
+tags:
+  - webassembly
+license: MIT
+types:
+  - cli
+source: 'https://github.com/danleh/wasabi'
+homepage: 'https://github.com/danleh/wasabi'
+description: Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.

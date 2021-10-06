@@ -63,6 +63,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
   - [Containers](#container)
   - [Security/DAST](#security)
   - [Web](#web)
+  - [WebAssembly](#webassembly)
   
 
 ---
@@ -182,6 +183,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="web">Web</h2>
 
 - [Smartbear](https://smartbear.com/) :copyright: - Test automation and performance testing platform
+
+
+<h2 id="webassembly">WebAssembly</h2>
+
+- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
 
 
 ## License
