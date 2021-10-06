@@ -50,7 +50,8 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#ruby">Ruby</a></li>
     <li><a href="#rust">Rust</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
-    </ul>
+    <li><a href="#wasm">WebAssembly</a></li>
+  </ul>
 </details>
 
 #### [Multiple languages](#multiple-languages-1)
@@ -132,6 +133,10 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="vbasic">Visual Basic</h2>
 
 - [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+
+<h2 id="wasm">WebAssembly</h2>
+
+- [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly (written in javascript).
 
 
 ## Multiple languages
