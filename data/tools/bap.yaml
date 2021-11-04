@@ -1,0 +1,11 @@
+name: BAP
+categories:
+  - linter
+tags:
+  - binary
+license: MIT
+types:
+  - cli
+source: 'https://github.com/BinaryAnalysisPlatform/bap'
+homepage: 'https://github.com/BinaryAnalysisPlatform/bap'
+description: The Carnegie Mellon University Binary Analysis Platform (CMU BAP) is a suite of utilities and libraries for the analysis of machine code. The included Primus microexecution interpreter enables dynamic analysis.
