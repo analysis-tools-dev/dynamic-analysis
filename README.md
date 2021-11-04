@@ -155,6 +155,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="binary">Binaries</h2>
 
 - [angr](https://github.com/angr/angr) - Platform agnostic binary analysis framework from UCSB.
+- [BAP](https://github.com/BinaryAnalysisPlatform/bap) - The Carnegie Mellon University Binary Analysis Platform (CMU BAP) is a suite of utilities and libraries for the analysis of machine code. The included Primus microexecution interpreter enables dynamic analysis.
 - [BOLT](https://github.com/facebookincubator/BOLT) - Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
 - [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
 - [DynamoRIO](http://www.dynamorio.org/) - Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
