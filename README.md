@@ -83,7 +83,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
 - [LDRA](https://ldra.com) :copyright: - A tool suite including dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) :warning: - An interpreter for finding subtle bugs in programs written in standard C.
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
 - [Valgrind](https://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
 
@@ -93,7 +93,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [KLEE](https://github.com/klee/klee) - Symbolic virtual machine built on top of the LLVM compiler infrastructure.
 - [LDRA](https://ldra.com) :copyright: - A tool suite including dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) - <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) :warning: - An interpreter for finding subtle bugs in programs written in standard C.
+- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) - An interpreter for finding subtle bugs in programs written in standard C.
 - [Valgrind](https://valgrind.org/) - An instrumentation framework for building dynamic analysis tools.
 
 
@@ -105,7 +105,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 <h2 id="javascript">JavaScript</h2>
 
-- [Iroh.js](https://github.com/maierfelix/Iroh) :warning: - A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+- [Iroh.js](https://github.com/maierfelix/Iroh) - A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
 - [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
 
 
@@ -115,7 +115,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [icontract](https://github.com/Parquery/icontract) - Design-by-contract library supporting behavioral subtyping
 There is also a wider tooling around the icontract library such as  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).
 - [Scalene](https://github.com/emeryberger/scalene) - A high-performance, high-precision CPU and memory profiler for Python
-- [typo](https://github.com/aldanor/typo) :warning: - Runtime Type Checking for Python 3.
+- [typo](https://github.com/aldanor/typo) - Runtime Type Checking for Python 3.
 
 
 <h2 id="ruby">Ruby</h2>
@@ -128,7 +128,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [loom](https://github.com/tokio-rs/loom) - Concurrency permutation testing tool for Rust.  It runs a test many times, permuting the possible concurrent executions of that test.
 - [MIRI](https://github.com/rust-lang/miri) - An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
 - [puffin](https://github.com/EmbarkStudios/puffin) - Instrumentation profiler for Rust.
-- [stuck](https://github.com/jonhoo/stuck) :warning: - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
+- [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
 
 
 <h2 id="vbasic">Visual Basic</h2>
@@ -159,7 +159,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [BOLT](https://github.com/facebookincubator/BOLT) - Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
 - [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
 - [DynamoRIO](http://www.dynamorio.org/) - Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
-- [llvm-propeller](https://github.com/google/llvm-propeller) :warning: - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
+- [llvm-propeller](https://github.com/google/llvm-propeller) - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
 - [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
 - [TRITON](https://triton.quarkslab.com/) - Dynamic Binary Analysis for x86 binaries.
 
