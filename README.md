@@ -19,6 +19,7 @@ This project would not be possible without the generous support of our sponsors.
     <td><a href="https://deepcode.ai"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/deepcode.png" /></a></td>
     <td><a href="https://codescene.io/"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/codescene.svg" /></a></td>
     <td><a href="https://r2c.dev/"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/r2c.svg" /></a></td>
+    <td><a href="https://codiga.io/"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/codiga.svg" /></a></td>
   </tr>
 </table>
 
@@ -150,7 +151,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [BOLT](https://github.com/facebookincubator/BOLT) - Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
 - [Dr. Memory](https://drmemory.org/) - Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).
 - [DynamoRIO](http://www.dynamorio.org/) - Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.
-- [llvm-propeller](https://github.com/google/llvm-propeller) - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
+- [llvm-propeller](https://github.com/google/llvm-propeller) :warning: - Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook
 - [Pin Tools](https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool) - A dynamic binary instrumentation tool and a platform for creating analysis tools.
 - [TRITON](https://triton.quarkslab.com/) - Dynamic Binary Analysis for x86 binaries.
 
