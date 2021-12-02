@@ -1,6 +1,6 @@
 <!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools/` instead. 🚨🚨 -->
 
- <a href="http://analysis-tools.dev/">
+ <a href="https://analysis-tools.dev/">
    <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.png" />
  </a>
 
@@ -47,9 +47,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#cpp">C++</a></li>
     <li><a href="#java">Java</a></li>
     <li><a href="#javascript">JavaScript</a></li>
+    <li><a href="#php">PHP</a></li>
     <li><a href="#python">Python</a></li>
     <li><a href="#ruby">Ruby</a></li>
     <li><a href="#rust">Rust</a></li>
+    <li><a href="#sql">SQL</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
     </ul>
 </details>
@@ -62,9 +64,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
   - [Binaries](#binary)
   - [Bytecode/IR](#bytecode)
   - [Containers](#container)
+  - [Laravel](#laravel)
   - [Security/DAST](#security)
   - [Web](#web)
   - [WebAssembly](#webassembly)
+  - [XML](#xml)
   
 
 ---
@@ -109,6 +113,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [Jalangi2](https://github.com/Samsung/jalangi2) - Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
 
 
+<h2 id="php">PHP</h2>
+
+- [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+
+
 <h2 id="python">Python</h2>
 
 - [CrossHair](https://github.com/pschanely/CrossHair) - Symbolic execution engine for testing Python contracts.
@@ -131,6 +140,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [stuck](https://github.com/jonhoo/stuck) - provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
 
 
+<h2 id="sql">SQL</h2>
+
+- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+
+
 <h2 id="vbasic">Visual Basic</h2>
 
 - [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: - Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
@@ -139,9 +153,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 ## Multiple languages
 
 - [Code Pulse](http://code-pulse.com/) - Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
-- [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
 - [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) - GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
-- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 ## Other
@@ -174,10 +186,17 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [cadvisor](https://github.com/google/cadvisor) - Analyzes resource usage and performance characteristics of running containers.
 
 
+<h2 id="laravel">Laravel</h2>
+
+- [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+
+
 <h2 id="security">Security/DAST</h2>
 
 - [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: - HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+- [Enlightn](https://www.laravel-enlightn.com/) - A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
 - [WebScanner](https://www.defensecode.com/web-security-scanner-dast/) :copyright: - WebScanner is a DAST solution for comprehensive security audits of active web applications.
+- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 <h2 id="web">Web</h2>
@@ -188,6 +207,11 @@ There is also a wider tooling around the icontract library such as  a linter (py
 <h2 id="webassembly">WebAssembly</h2>
 
 - [Wasabi](https://github.com/danleh/wasabi) - Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.
+
+
+<h2 id="xml">XML</h2>
+
+- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: - Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 ## License
