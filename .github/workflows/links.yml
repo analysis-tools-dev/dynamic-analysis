@@ -19,7 +19,7 @@ jobs:
           # See https://github.com/analysis-tools-dev/dynamic-analysis/issues/117
           # Ideally we should exclude this path, but that is not supported by lychee yet.
           # See https://github.com/lycheeverse/lychee/issues/418
-          args: --exclude  --verbose --no-progress README.md
+          args: --verbose --no-progress README.md
       
       - name: Create Issue From File
         uses: peter-evans/create-issue-from-file@v2
