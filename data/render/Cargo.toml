@@ -5,14 +5,14 @@ authors = ["Matthias Endler <matthias-endler@gmx.net>"]
 edition = "2018"
 
 [dependencies]
-serde = "1.0.139"
+serde = "1.0.141"
 serde_derive = "1.0.126"
-serde_yaml = "0.8.25"
+serde_yaml = "0.9.4"
 askama = "0.11.1"
 # Switch back to crates as soon as a new release with tokio 1.x support is
 # released. See https://github.com/softprops/hubcaps/pull/285
 hubcaps = { git="https://github.com/softprops/hubcaps" }
 tokio = { version = "1.14.0", features = ["rt-multi-thread", "macros"] }
 chrono = "0.4.19"
-anyhow = "1.0.58"
+anyhow = "1.0.60"
 pico-args = "0.5.0"
