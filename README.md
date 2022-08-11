@@ -138,6 +138,7 @@ There is also a wider tooling around the icontract library such as  a linter (py
 - [loom](https://github.com/tokio-rs/loom) — Concurrency permutation testing tool for Rust.  It runs a test many times, permuting the possible concurrent executions of that test.
 - [MIRI](https://github.com/rust-lang/miri) — An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.
 - [puffin](https://github.com/EmbarkStudios/puffin) — Instrumentation profiler for Rust.
+- [rust-san](https://github.com/japaric/rust-san) — How-to sanitize your Rust code with built-in Rust dynamic analyzers
 - [stuck](https://github.com/jonhoo/stuck) — provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
 
 
