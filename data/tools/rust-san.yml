@@ -1,0 +1,11 @@
+name: rust-san
+categories:
+  - linter
+tags:
+  - rust
+license: Apache 2.0 / MIT License
+types:
+  - cli
+source: 'https://github.com/japaric/rust-san'
+homepage: 'https://github.com/japaric/rust-san'
+description:  How-to sanitize your Rust code with built-in Rust dynamic analyzers
