@@ -1,0 +1,13 @@
+name: statsviz
+categories:
+  - linter
+tags:
+  - go
+license: MIT
+types:
+  - cli
+source: 'https://github.com/arl/statsviz'
+homepage: 'https://github.com/arl/statsviz'
+description: >- 
+  Instant live visualization of your Go application runtime statistics in the browser.
+  It plots heap usage, MSpans/MCaches, Object counts, Goroutines and GC/CPU fraction.
