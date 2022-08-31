@@ -46,6 +46,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#dotnet">.NET</a></li>
     <li><a href="#c">C</a></li>
     <li><a href="#cpp">C++</a></li>
+    <li><a href="#go">Go</a></li>
     <li><a href="#java">Java</a></li>
     <li><a href="#javascript">JavaScript</a></li>
     <li><a href="#php">PHP</a></li>
@@ -100,6 +101,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) — <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
 - [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) — An interpreter for finding subtle bugs in programs written in standard C.
 - [Valgrind](https://valgrind.org/) — An instrumentation framework for building dynamic analysis tools.
+
+
+<h2 id="go">Go</h2>
+
+- [statsviz](https://github.com/arl/statsviz) — Instant live visualization of your Go application runtime statistics in the browser. It plots heap usage, MSpans/MCaches, Object counts, Goroutines and GC/CPU fraction.
 
 
 <h2 id="java">Java</h2>
