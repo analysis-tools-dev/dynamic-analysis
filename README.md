@@ -7,6 +7,8 @@
 This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more.  
 The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings and user comments for each tool.
 
+[![Website](https://img.shields.io/badge/Website-Online-2B5BAE)](https://analysis-tools.dev)
+
 ## What is Dynamic Analysis?
 
 > Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
