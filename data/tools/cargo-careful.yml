@@ -1,0 +1,21 @@
+name: cargo-careful
+categories:
+  - linter
+tags:
+  - rust
+license: Apache-2.0
+types:  
+  - cli
+source: 'https://github.com/RalfJung/cargo-careful'
+homepage: 'https://github.com/RalfJung/cargo-careful'
+description: >-
+    Execute Rust code carefully, with extra checking along the way.
+    It builds the standard library with debug assertions.
+    
+    Here are some of the checks this enables:
+
+    * `get_unchecked` in slices performs bounds checks
+    * `copy`, `copy_nonoverlapping`, and `write_bytes` check that pointers are aligned and non-null and (if applicable) non-overlapping
+    `{NonNull,NonZero*,...}::new_unchecked` check that the value is valid
+    * plenty of internal consistency checks in the collection types
+    * mem::zeroed and the deprecated mem::uninitialized panic if the type does not allow that kind of initialization
