@@ -1,0 +1,16 @@
+name: Sydr
+categories:
+  - fuzzer
+  - linter
+tags:
+  - security
+  - c
+  - cpp
+  - rust
+  - swift
+  - go
+license: proprietary
+types:
+  - cli
+homepage: 'https://sydr-fuzz.github.io/'
+description: Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
