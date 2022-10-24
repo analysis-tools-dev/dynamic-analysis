@@ -13,4 +13,7 @@ license: proprietary
 types:
   - cli
 homepage: 'https://sydr-fuzz.github.io/'
+resources:
+  - title: Sydr - Cutting Dynamic Symbolic Execution
+    url: https://www.ispras.ru/conf/2020/video/compiler-technology-11-december.mp4#t=6021
 description: Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
