@@ -1,0 +1,16 @@
+name: CASR
+categories:
+  - linter
+tags:
+  - security
+  - c
+  - cpp
+  - rust
+  - swift
+  - go
+license: Apache-2.0 License
+types:
+  - cli
+source: 'https://github.com/ispras/casr'
+homepage: 'https://crates.io/crates/casr'
+description: Crash Analysis and Severity Report.
