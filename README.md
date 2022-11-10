@@ -258,9 +258,6 @@ Here are some of the checks this enables:
 - [Code Pulse](http://code-pulse.com/) — Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
 
 
-- [Gcov](https://gcc.gnu.org/onlinedocs/gcc/Gcov.html) — GNU source code coverage program. Code coverage tool and profiling tool which is part of the GCC. Supports C, C++, Fortran.
-
-
 - [Sydr](https://sydr-fuzz.github.io/) :copyright: — Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
 
 
