@@ -238,7 +238,7 @@ Here are some of the checks this enables:
 
 
 
-- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+- [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 <h2 id="vbasic">Visual Basic</h2>
@@ -328,7 +328,7 @@ Here are some of the checks this enables:
 - [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
 
 
-- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+- [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 <h2 id="web">Web</h2>
@@ -349,7 +349,7 @@ Here are some of the checks this enables:
 
 
 
-- [WhiteHat Sentinel Dynamic](https://www.whitehatsec.com/products/dynamic-application-security-testing/) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
+- [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
 
 
 ## License
