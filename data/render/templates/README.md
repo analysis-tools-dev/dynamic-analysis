@@ -1,4 +1,4 @@
-<!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools/` instead. 🚨🚨 -->
+<!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools.yml` instead. 🚨🚨 -->
 
  <a href="https://analysis-tools.dev/">
    <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.png" />
