@@ -1,0 +1,1084 @@
+{
+  "angr": {
+    "name": "angr",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "BSD-2-Clause License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/angr/angr",
+    "source": "https://github.com/angr/angr",
+    "pricing": null,
+    "plans": null,
+    "description": "Platform agnostic binary analysis framework from UCSB.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "appscan-standard": {
+    "name": "AppScan Standard",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "security"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.hcltechsw.com/products/appscan",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "bolt": {
+    "name": "BOLT",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "LLVM Release License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/facebookincubator/BOLT",
+    "source": "https://github.com/facebookincubator/BOLT",
+    "pricing": null,
+    "plans": null,
+    "description": "Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "cadvisor": {
+    "name": "cadvisor",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "container"
+    ],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/google/cadvisor",
+    "source": "https://github.com/google/cadvisor",
+    "pricing": null,
+    "plans": null,
+    "description": "Analyzes resource usage and performance characteristics of running containers.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "cargo-careful": {
+    "name": "cargo-careful",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/RalfJung/cargo-careful",
+    "source": "https://github.com/RalfJung/cargo-careful",
+    "pricing": null,
+    "plans": null,
+    "description": "Execute Rust code carefully, with extra checking along the way. It builds the standard library with debug assertions.\nHere are some of the checks this enables:\n* `get_unchecked` in slices performs bounds checks * `copy`, `copy_nonoverlapping`, and `write_bytes` check that pointers are aligned and non-null and (if applicable) non-overlapping `{NonNull,NonZero*,...}::new_unchecked` check that the value is valid * plenty of internal consistency checks in the collection types * mem::zeroed and the deprecated mem::uninitialized panic if the type does not allow that kind of initialization",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "casr": {
+    "name": "CASR",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp",
+      "go",
+      "rust",
+      "swift"
+    ],
+    "other": [
+      "security"
+    ],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://crates.io/crates/casr",
+    "source": "https://github.com/ispras/casr",
+    "pricing": null,
+    "plans": null,
+    "description": "Crash Analysis and Severity Report.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "chap": {
+    "name": "CHAP",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "GPL v2"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/vmware/chap",
+    "source": "https://github.com/vmware/chap",
+    "pricing": null,
+    "plans": null,
+    "description": "Analyzes un-instrumented ELF core files for leaks, memory growth, and corruption. It helps explain memory growth, can identify some forms of corruption, and  supplements a debugger by giving the status of various memory locations.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "code-pulse": {
+    "name": "Code Pulse",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "dotnet",
+      "java"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "http://code-pulse.com/",
+    "source": "https://github.com/codedx/codepulse",
+    "pricing": null,
+    "plans": null,
+    "description": "Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "crosshair": {
+    "name": "CrossHair",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "python"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/pschanely/CrossHair",
+    "source": "https://github.com/pschanely/CrossHair",
+    "pricing": null,
+    "plans": null,
+    "description": "Symbolic execution engine for testing Python contracts.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "dr-memory": {
+    "name": "Dr. Memory",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "LGPL License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://drmemory.org/",
+    "source": "https://github.com/DynamoRIO/drmemory",
+    "pricing": null,
+    "plans": null,
+    "description": "Dr. Memory is a memory monitoring tool capable of identifying memory-related programming errors ([Github](https://github.com/DynamoRIO/drmemory)).",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "dynamorio": {
+    "name": "DynamoRIO",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "BSD License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "http://www.dynamorio.org/",
+    "source": "https://github.com/DynamoRIO/dynamorio",
+    "pricing": null,
+    "plans": null,
+    "description": "Is a runtime code manipulation system that supports code transformations on any part of a program, while it executes.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "enlightn": {
+    "name": "Enlightn",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "php"
+    ],
+    "other": [
+      "laravel",
+      "security"
+    ],
+    "licenses": [
+      "LGPL-3.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.laravel-enlightn.com/",
+    "source": "https://github.com/enlightn/enlightn",
+    "pricing": null,
+    "plans": null,
+    "description": "A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "icontract": {
+    "name": "icontract",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "python"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "library"
+    ],
+    "homepage": "https://github.com/Parquery/icontract",
+    "source": "https://github.com/Parquery/icontract",
+    "pricing": null,
+    "plans": null,
+    "description": "Design-by-contract library supporting behavioral subtyping\nThere is also a wider tooling around the icontract library such as  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "iroh-js": {
+    "name": "Iroh.js",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "javascript"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/maierfelix/Iroh",
+    "source": "https://github.com/maierfelix/Iroh",
+    "pricing": null,
+    "plans": null,
+    "description": "A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "jalangi2": {
+    "name": "Jalangi2",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "javascript"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/Samsung/jalangi2",
+    "source": "https://github.com/Samsung/jalangi2",
+    "pricing": null,
+    "plans": null,
+    "description": "Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "java-pathfinder": {
+    "name": "Java PathFinder",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "java"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/javapathfinder/jpf-core",
+    "source": "https://github.com/javapathfinder/jpf-core",
+    "pricing": null,
+    "plans": null,
+    "description": "An extensible software model checking framework for Java bytecode programs.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "klee": {
+    "name": "KLEE",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/klee/klee",
+    "source": "https://github.com/klee/klee",
+    "pricing": null,
+    "plans": null,
+    "description": "Symbolic virtual machine built on top of the LLVM compiler infrastructure.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "ldra": {
+    "name": "LDRA",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://ldra.com",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "A tool suite including dynamic analysis and test to various standards can ensure test coverage to 100% op-code, branch & decsion coverage.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "llvm-clang-sanitizers": {
+    "name": "LLVM/Clang Sanitizers",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/google/sanitizers",
+    "source": "https://github.com/google/sanitizers",
+    "pricing": null,
+    "plans": null,
+    "description": "<ul> <li><a href=\"https://github.com/google/sanitizers/wiki/AddressSanitizer\">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href=\"https://github.com/google/sanitizers/wiki/MemorySanitizer\">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href=\"https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual\">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "llvm-propeller": {
+    "name": "llvm-propeller",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "Apache 2.0"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/google/llvm-propeller",
+    "source": "https://github.com/google/llvm-propeller",
+    "pricing": null,
+    "plans": null,
+    "description": "Profile guided hot/cold function splitting to improve cache efficiency. An alternative to BOLT by Facebook",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "loom": {
+    "name": "loom",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/tokio-rs/loom",
+    "source": "https://github.com/tokio-rs/loom",
+    "pricing": null,
+    "plans": null,
+    "description": "Concurrency permutation testing tool for Rust.  It runs a test many times, permuting the possible concurrent executions of that test.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "microsoft-intellitest": {
+    "name": "Microsoft IntelliTest",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "dotnet"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://docs.microsoft.com/en-us/visualstudio/test/intellitest-manual/getting-started?view=vs-2019",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Generate a candidate suite of tests for your .NET code.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "miri": {
+    "name": "MIRI",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/rust-lang/miri",
+    "source": "https://github.com/rust-lang/miri",
+    "pricing": null,
+    "plans": null,
+    "description": "An interpreter for Rust's mid-level intermediate representation, which can detect certain classes of undefined behavior like out-of-bounds memory accesses and use-after-free.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "parasoft-jtest": {
+    "name": "Parasoft Jtest",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "java"
+    ],
+    "other": [],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.parasoft.com/products/jtest",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Jtest is an automated Java software testing and static analysis product that is made by Parasoft. The product includes technology for Data-flow analysis Unit test-case generation and execution, static analysis, regression testing, code coverage, and runtime error detection.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "pex-and-moles": {
+    "name": "Pex and Moles",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "dotnet"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.microsoft.com/en-us/research/project/pex-and-moles-isolation-and-white-box-unit-testing-for-net/",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Pex automatically generates test suites with high code coverage using automated white box analysis.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "pin-tools": {
+    "name": "Pin Tools",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://software.intel.com/en-us/articles/pin-a-dynamic-binary-instrumentation-tool",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "A dynamic binary instrumentation tool and a platform for creating analysis tools.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "puffin": {
+    "name": "puffin",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/EmbarkStudios/puffin",
+    "source": "https://github.com/EmbarkStudios/puffin",
+    "pricing": null,
+    "plans": null,
+    "description": "Instrumentation profiler for Rust.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "rust-san": {
+    "name": "rust-san",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache 2.0 / MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/japaric/rust-san",
+    "source": "https://github.com/japaric/rust-san",
+    "pricing": null,
+    "plans": null,
+    "description": "How-to sanitize your Rust code with built-in Rust dynamic analyzers",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "scalene": {
+    "name": "Scalene",
+    "categories": [
+      "profiler"
+    ],
+    "languages": [
+      "python"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/emeryberger/scalene",
+    "source": "https://github.com/emeryberger/scalene",
+    "pricing": null,
+    "plans": null,
+    "description": "A high-performance, high-precision CPU and memory profiler for Python",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "smartbear": {
+    "name": "Smartbear",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "api",
+      "web"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "service"
+    ],
+    "homepage": "https://smartbear.com/",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Test automation and performance testing platform",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "souper": {
+    "name": "souper",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "bytecode"
+    ],
+    "licenses": [
+      "Apache 2.0"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/google/souper",
+    "source": "https://github.com/google/souper",
+    "pricing": null,
+    "plans": null,
+    "description": "optimize LLVM IR with SMT solvers",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "statsviz": {
+    "name": "statsviz",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "go"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/arl/statsviz",
+    "source": "https://github.com/arl/statsviz",
+    "pricing": null,
+    "plans": null,
+    "description": "Instant live visualization of your Go application runtime statistics in the browser. It plots heap usage, MSpans/MCaches, Object counts, Goroutines and GC/CPU fraction.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "stuck": {
+    "name": "stuck",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/jonhoo/stuck",
+    "source": "https://github.com/jonhoo/stuck",
+    "pricing": null,
+    "plans": null,
+    "description": "provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "suture": {
+    "name": "suture",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "ruby"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/testdouble/suture",
+    "source": "https://github.com/testdouble/suture",
+    "pricing": null,
+    "plans": null,
+    "description": "A Ruby gem that helps you refactor your legacy code  by the result of some old behavior with a new version.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "sydr": {
+    "name": "Sydr",
+    "categories": [
+      "fuzzer",
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp",
+      "go",
+      "rust",
+      "swift"
+    ],
+    "other": [
+      "security"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://sydr-fuzz.github.io/",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": [
+      {
+        "title": "Sydr - Cutting Dynamic Symbolic Execution",
+        "url": "https://www.ispras.ru/conf/2020/video/compiler-technology-11-december.mp4#t=6021"
+      }
+    ],
+    "wrapper": null
+  },
+  "tis-interpreter": {
+    "name": "tis-interpreter",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/TrustInSoft/tis-interpreter",
+    "source": "https://github.com/TrustInSoft/tis-interpreter",
+    "pricing": null,
+    "plans": null,
+    "description": "An interpreter for finding subtle bugs in programs written in standard C.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "triton": {
+    "name": "TRITON",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "Apache-2.0 License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://triton.quarkslab.com/",
+    "source": "https://github.com/JonathanSalwan/Triton",
+    "pricing": null,
+    "plans": null,
+    "description": "Dynamic Binary Analysis for x86 binaries.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "typo": {
+    "name": "typo",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "python"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT License"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/aldanor/typo",
+    "source": "https://github.com/aldanor/typo",
+    "pricing": null,
+    "plans": null,
+    "description": "Runtime Type Checking for Python 3.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "valgrind": {
+    "name": "Valgrind",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp"
+    ],
+    "other": [],
+    "licenses": [
+      "GNU General Public License v2"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://valgrind.org/",
+    "source": "https://sourceware.org/git/?p=valgrind.git",
+    "pricing": null,
+    "plans": null,
+    "description": "An instrumentation framework for building dynamic analysis tools.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "vb-watch": {
+    "name": "VB Watch",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "vbasic"
+    ],
+    "other": [],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.aivosto.com/vbwatch.html",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "wasabi": {
+    "name": "Wasabi",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "webassembly"
+    ],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/danleh/wasabi",
+    "source": "https://github.com/danleh/wasabi",
+    "pricing": null,
+    "plans": null,
+    "description": "Wasabi is a framework for writing dynamic analyses for WebAssembly, written in JavaScript.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  },
+  "whitehat-sentinel-dynamic": {
+    "name": "WhiteHat Sentinel Dynamic",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "sql"
+    ],
+    "other": [
+      "security",
+      "xml"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://www.synopsys.com/software-integrity/security-testing/dast.html",
+    "source": null,
+    "pricing": null,
+    "plans": null,
+    "description": "Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "wrapper": null
+  }
+}

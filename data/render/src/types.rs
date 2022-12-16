@@ -2,7 +2,7 @@ use anyhow::{bail, Result};
 use askama::Template;
 use serde::Deserialize;
 use std::cmp::Ordering;
-use std::collections::{BTreeMap, HashSet};
+use std::collections::{BTreeMap, BTreeSet};
 
 use crate::valid;
 
@@ -33,10 +33,10 @@ impl Tag {
 }
 
 // The tags from tags.yml. Note that this is a `Vector<Tag>` and not a
-// `HashSet<Tag>` because we like to keep the sorting between renders.
+// `BTreeSet<Tag>` because we like to keep the sorting between renders.
 pub type Tags = Vec<Tag>;
 
-pub type EntryTags = HashSet<String>;
+pub type EntryTags = BTreeSet<String>;
 
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Resource {
@@ -47,12 +47,14 @@ pub struct Resource {
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub struct ParsedEntry {
     pub name: String,
-    pub categories: HashSet<String>,
-    pub tags: HashSet<String>,
+    pub categories: BTreeSet<String>,
+    pub tags: BTreeSet<String>,
     pub license: String,
-    pub types: HashSet<String>,
+    pub types: BTreeSet<String>,
     pub homepage: String,
     pub source: Option<String>,
+    pub pricing: Option<String>,
+    pub plans: Option<BTreeMap<String, bool>>,
     pub description: String,
     pub discussion: Option<String>,
     pub deprecated: Option<bool>,
@@ -63,12 +65,14 @@ pub struct ParsedEntry {
 #[derive(Clone, Debug, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Entry {
     pub name: String,
-    pub categories: HashSet<String>,
-    pub tags: HashSet<Tag>,
+    pub categories: BTreeSet<String>,
+    pub tags: BTreeSet<Tag>,
     pub license: String,
-    pub types: HashSet<String>,
+    pub types: BTreeSet<String>,
     pub homepage: String,
     pub source: Option<String>,
+    pub pricing: Option<String>,
+    pub plans: Option<BTreeMap<String, bool>>,
     pub description: String,
     pub discussion: Option<String>,
     pub deprecated: Option<bool>,
@@ -85,12 +89,12 @@ impl Entry {
             ]
             .iter()
             .cloned()
-            .collect::<HashSet<Tag>>()
+            .collect::<BTreeSet<Tag>>()
     }
 
     pub fn from_parsed(p: ParsedEntry, tags: &[Tag]) -> Result<Entry> {
         valid(&p, tags)?;
-        let entry_tags: Result<HashSet<Tag>> = p.tags.iter().map(|t| get_tag(t, tags)).collect();
+        let entry_tags: Result<BTreeSet<Tag>> = p.tags.iter().map(|t| get_tag(t, tags)).collect();
         Ok(Entry {
             name: p.name,
             categories: p.categories,
@@ -99,6 +103,8 @@ impl Entry {
             types: p.types,
             homepage: p.homepage,
             source: p.source,
+            pricing: p.pricing,
+            plans: p.plans,
             description: p.description,
             discussion: p.discussion,
             deprecated: p.deprecated,
@@ -138,3 +144,32 @@ pub struct Catalog {
     pub others: EntryMap,
     pub multi: Vec<Entry>,
 }
+
+/// An entry of the machine-readable JSON out from the tool.
+///
+/// We use a different, de-normalized data format instead of the catalog, which
+/// keeps the information for each tool in a struct instead of grouping tools by
+/// tags.
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ApiEntry {
+    /// The original entry name (not slugified)
+    pub name: String,
+    pub categories: BTreeSet<String>,
+    pub languages: Vec<String>,
+    pub other: Vec<String>,
+    pub licenses: Vec<String>,
+    pub types: BTreeSet<String>,
+    pub homepage: String,
+    pub source: Option<String>,
+    pub pricing: Option<String>,
+    pub plans: Option<BTreeMap<String, bool>>,
+    pub description: String,
+    pub discussion: Option<String>,
+    pub deprecated: Option<bool>,
+    pub resources: Option<Vec<Resource>>,
+    pub wrapper: Option<bool>,
+}
+
+/// The final API dataformat is a map where the key is the entry name and the
+/// value is the entry data, which makes searching for a tool's data easier
+pub type Api = BTreeMap<String, ApiEntry>;

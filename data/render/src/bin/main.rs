@@ -1,8 +1,9 @@
 use anyhow::{Context, Result};
 use askama::Template;
 use pico_args::Arguments;
-use render::types::{Entry, ParsedEntry, Tags};
-use render::{check_deprecated, group};
+use render::types::{Entry, ParsedEntry, Tag, Tags, Type};
+use render::{check_deprecated, create_api, create_catalog};
+use std::collections::BTreeMap;
 use std::env;
 use std::ffi::OsStr;
 use std::fs;
@@ -12,7 +13,8 @@ use std::path::PathBuf;
 struct Args {
     tags: PathBuf,
     tools: PathBuf,
-    out: PathBuf,
+    md_out: PathBuf,
+    json_out: PathBuf,
     skip_deprecated: bool,
 }
 
@@ -52,7 +54,8 @@ fn main() -> Result<()> {
     let args = Args {
         tags: args.value_from_os_str("--tags", parse_path)?,
         tools: args.value_from_os_str("--tools", parse_path)?,
-        out: args.value_from_os_str("--out", parse_path)?,
+        md_out: args.value_from_os_str("--md-out", parse_path)?,
+        json_out: args.value_from_os_str("--json-out", parse_path)?,
         skip_deprecated: args.contains("--skip-deprecated"),
     };
 
@@ -72,7 +75,55 @@ fn main() -> Result<()> {
         }
     }
 
-    let catalog = group(&tags, &tools)?;
-    fs::write(&args.out, catalog.render()?).context("Cannot write")?;
+    let languages: Vec<Tag> = tags
+        .clone()
+        .into_iter()
+        .filter(|t| t.tag_type == Type::Language)
+        .collect();
+
+    let other_tags: Vec<Tag> = tags
+        .clone()
+        .into_iter()
+        .filter(|t| t.tag_type == Type::Other)
+        .collect();
+
+    let catalog = create_catalog(&tools, &languages, &other_tags)?;
+    fs::write(&args.md_out, catalog.render()?).context(format!(
+        "Cannot write Markdown output to {}",
+        args.md_out.display()
+    ))?;
+
+    let api = create_api(catalog, &languages, &other_tags)?;
+
+    let json = serde_json::to_string_pretty(&api)?;
+    let tools_out = args.json_out.join("tools.json");
+    fs::write(&tools_out, json).context(format!(
+        "Cannot write tools JSON output to {}",
+        args.json_out.display()
+    ))?;
+
+    let mut tags_json = BTreeMap::new();
+    tags_json.insert("languages", languages);
+    tags_json.insert("other", other_tags);
+    let json = serde_json::to_string_pretty(&tags_json)?;
+
+    let tags_out = args.json_out.join("tags.json");
+    fs::write(&tags_out, json).context(format!(
+        "Cannot write tags JSON output to {}",
+        args.json_out.display()
+    ))?;
+
+    // let stats_raw = fs::read_to_string("data/api/stats_raw.json")?;
+    // let stats: StatsRaw = serde_json::from_str(&stats_raw)?;
+
+    // let stats = format_stats(stats);
+    // let json = serde_json::to_string(&stats)?;
+
+    // let stats_out = args.json_out.join("stats.json");
+    // fs::write(&stats_out, json).context(format!(
+    //     "Cannot write stats JSON output to {}",
+    //     args.json_out.display()
+    // ))?;
+
     Ok(())
 }
