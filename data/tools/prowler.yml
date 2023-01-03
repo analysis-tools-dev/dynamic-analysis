@@ -1,0 +1,20 @@
+name: prowler
+categories:
+  - linter
+tags:
+  - cloud
+license: Apache-2.0 license
+types:
+  - cli
+source: 'https://github.com/prowler-cloud/prowler'
+homepage: 'https://prowler.pro'
+resources:
+  - title: 'Prowler Introduction'
+    url: 'https://www.youtube.com/watch?v=Oo5e45NCKFw'
+description: >-
+  Prowler is an Open Source security tool to perform AWS and Azure security best
+  practices assessments, audits, incident response, continuous monitoring,
+  hardening and forensics readiness.
+
+  It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA,
+  FFIEC, SOC2, AWS FTR, ENS and custom security frameworks.

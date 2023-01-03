@@ -28,6 +28,9 @@
 - name: C
   tag: c
   type: language
+- name: Cloud
+  tag: cloud
+  type: other
 - name: Clojure
   tag: clojure
   type: language

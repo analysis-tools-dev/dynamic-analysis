@@ -313,6 +313,11 @@
   ],
   "other": [
     {
+      "name": "Cloud",
+      "tag": "cloud",
+      "tag_type": "Other"
+    },
+    {
       "name": "Formatter",
       "tag": "formatter",
       "tag_type": "Other"

@@ -76,6 +76,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [Bytecode/IR](#bytecode)
 
 
+- [Cloud](#cloud)
+
+
 - [Containers](#container)
 
 
@@ -302,6 +305,14 @@ Here are some of the checks this enables:
 
 
 - [souper](https://github.com/google/souper) — optimize LLVM IR with SMT solvers
+
+
+<h2 id="cloud">Cloud</h2>
+
+
+
+- [prowler](https://prowler.pro) — Prowler is an Open Source security tool to perform AWS and Azure security best practices assessments, audits, incident response, continuous monitoring, hardening and forensics readiness.
+It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, FFIEC, SOC2, AWS FTR, ENS and custom security frameworks.
 
 
 <h2 id="container">Containers</h2>

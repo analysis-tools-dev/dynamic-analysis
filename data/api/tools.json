@@ -663,6 +663,36 @@
     "resources": null,
     "wrapper": null
   },
+  "prowler": {
+    "name": "prowler",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "cloud"
+    ],
+    "licenses": [
+      "Apache-2.0 license"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://prowler.pro",
+    "source": "https://github.com/prowler-cloud/prowler",
+    "pricing": null,
+    "plans": null,
+    "description": "Prowler is an Open Source security tool to perform AWS and Azure security best practices assessments, audits, incident response, continuous monitoring, hardening and forensics readiness.\nIt contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, FFIEC, SOC2, AWS FTR, ENS and custom security frameworks.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": [
+      {
+        "title": "Prowler Introduction",
+        "url": "https://www.youtube.com/watch?v=Oo5e45NCKFw"
+      }
+    ],
+    "wrapper": null
+  },
   "puffin": {
     "name": "puffin",
     "categories": [
