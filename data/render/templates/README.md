@@ -4,14 +4,11 @@
    <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.png" />
  </a>
 
-This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more.  
-The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings and user comments for each tool.
+This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more. The focus is on tools which improve code quality such as linters and formatters.
+The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings, user comments, and additional resources like videos for each tool.
 
 [![Website](https://img.shields.io/badge/Website-Online-2B5BAE)](https://analysis-tools.dev)
-
-## What is Dynamic Analysis?
-
-> Dynamic program analysis is the analysis of computer software that is performed by executing programs on a real or virtual processor. — [Wikipedia](https://en.wikipedia.org/wiki/Dynamic_program_analysis)
+![CI](https://github.com/analysis-tools-dev/dynamic-analysis/workflows/CI/badge.svg)
 
 ## Sponsors
 
@@ -55,11 +52,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 #### [Multiple languages](#multiple-languages-1)
 
 #### [Other](#other-1)
-
 {% for (tag, _) in others %}
-
 - [{{ tag.name }}](#{{ tag.tag }})
-{% endfor %}
+{%- endfor %}
 
 ---
 
@@ -70,7 +65,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 <h2 id="{{ language.tag }}">{{ language.name }}</h2>
 
 {% for linter in linters %}
-
 - [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
 {% endfor %}
 
@@ -79,7 +73,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 ## Multiple languages
 
 {% for linter in multi %}
-
 - [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
 {% endfor %}
 
@@ -90,7 +83,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 <h2 id="{{ tag.tag }}">{{ tag.name }}</h2>
 
 {% for other in others %}
-
 - [{{ other.name }}]({{ other.homepage }}){% if other.discussion.is_some() %} [:information_source:](<{{other.discussion.as_ref().unwrap()}}>){% endif %}{% if other.deprecated.is_some() %} :warning:{% endif %}{% if other.license == "proprietary" %} :copyright:{% endif %} — {{ other.description }}
 {% endfor %}
 
