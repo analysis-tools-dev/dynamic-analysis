@@ -1,0 +1,18 @@
+name: allocscope
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+  - rust
+license: GPL-3.0
+types:
+  - cli
+source: "https://github.com/matt-kimball/allocscope"
+homepage: "https://github.com/matt-kimball/allocscope"
+description: >-
+  allocscope is a tool for tracking down where the most egregiously large
+  allocations are occurring in a C, C++ or Rust codebase. It is particularly
+  intendend to be useful for developers who want to get a handle on excessive
+  allocations and are working in a large codebase with multiple contributors
+  with allocations occuring in many modules or libraries.
