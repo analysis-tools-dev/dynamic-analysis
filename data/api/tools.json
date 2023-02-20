@@ -304,6 +304,33 @@
     "demos": null,
     "wrapper": null
   },
+  "dynapyt": {
+    "name": "DynaPyt",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "python"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/sola-st/DynaPyt",
+    "source": "https://github.com/sola-st/DynaPyt",
+    "pricing": null,
+    "plans": null,
+    "description": "DynaPyt is a framework for writing dynamic analyses for Python. The analyses can also modify runtime values to alter the execution.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
   "enlightn": {
     "name": "Enlightn",
     "categories": [
