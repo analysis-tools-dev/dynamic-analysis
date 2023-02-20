@@ -1,0 +1,11 @@
+name: DynaPyt
+categories:
+  - linter
+tags:
+  - python
+license: MIT
+types:
+  - cli
+source: 'https://github.com/sola-st/DynaPyt'
+homepage: 'https://github.com/sola-st/DynaPyt'
+description: DynaPyt is a framework for writing dynamic analyses for Python. The analyses can also modify runtime values to alter the execution.
