@@ -199,6 +199,8 @@ Here are some of the checks this enables:
 ## Multiple languages
 
 
+- [allocscope](https://github.com/matt-kimball/allocscope) — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
+
 - [CASR](https://crates.io/crates/casr) — Crash Analysis and Severity Report.
 
 - [Code Pulse](http://code-pulse.com/) — Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
