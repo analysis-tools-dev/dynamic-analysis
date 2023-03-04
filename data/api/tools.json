@@ -403,7 +403,7 @@
       "MIT"
     ],
     "types": [
-      "library"
+      "cli"
     ],
     "homepage": "https://github.com/Parquery/icontract",
     "source": "https://github.com/Parquery/icontract",
@@ -1023,8 +1023,8 @@
   "sydr": {
     "name": "Sydr",
     "categories": [
-      "fuzzer",
-      "linter"
+      "linter",
+      "fuzzer"
     ],
     "languages": [
       "c",
