@@ -5,9 +5,9 @@ tags:
   - python
 license: MIT
 types:
-  - library
-source: 'https://github.com/Parquery/icontract'
-homepage: 'https://github.com/Parquery/icontract'
+  - cli
+source: "https://github.com/Parquery/icontract"
+homepage: "https://github.com/Parquery/icontract"
 description: >-
   Design-by-contract library supporting behavioral subtyping
 
