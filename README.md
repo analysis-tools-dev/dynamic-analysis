@@ -62,33 +62,23 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 #### [Other](#other-1)
 
-
 - [API](#api)
-
 
 - [Binaries](#binary)
 
-
 - [Bytecode/IR](#bytecode)
-
 
 - [Cloud](#cloud)
 
-
 - [Containers](#container)
-
 
 - [Laravel](#laravel)
 
-
 - [Security/DAST](#security)
-
 
 - [Web](#web)
 
-
 - [WebAssembly](#webassembly)
-
 
 - [XML](#xml)
 
