@@ -24,7 +24,6 @@ This project would not be possible without the generous support of our sponsors.
     <td><a href="https://offensive360.com/"><img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/sponsors/offensive360.png" /></a></td>
   </tr>
 </table>
-
 If you also want to support this project, head over to our [Github sponsors page](https://github.com/sponsors/analysis-tools-dev).
 
 ## Meaning of Symbols:
