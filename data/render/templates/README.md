@@ -1,8 +1,8 @@
 <!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools.yml` instead. 🚨🚨 -->
 
- <a href="https://analysis-tools.dev/">
-   <img width="400px" alt="Analysis Tools" src="https://raw.githubusercontent.com/analysis-tools-dev/website/master/static/logo.png" />
- </a>
+<a href="https://analysis-tools.dev/">
+  <img alt="Analysis Tools Website" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/redesign.svg" />
+</a>
 
 This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more. The focus is on tools which improve code quality such as linters and formatters.
 The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings, user comments, and additional resources like videos for each tool.
@@ -53,9 +53,11 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 #### [Multiple languages](#multiple-languages-1)
 
 #### [Other](#other-1)
+
 {% for (tag, _) in others %}
+
 - [{{ tag.name }}](#{{ tag.value }})
-{% endfor %}
+  {% endfor %}
 
 ---
 
@@ -66,16 +68,18 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 <h2 id="{{ language.value }}">{{ language.name }}</h2>
 
 {% for linter in linters %}
+
 - [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
-{% endfor %}
+  {% endfor %}
 
 {%- endfor %}
 
 ## Multiple languages
 
 {% for linter in multi %}
+
 - [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
-{% endfor %}
+  {% endfor %}
 
 ## Other
 
@@ -84,8 +88,9 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 <h2 id="{{ tag.value }}">{{ tag.name }}</h2>
 
 {% for other in others %}
+
 - [{{ other.name }}]({{ other.homepage }}){% if other.discussion.is_some() %} [:information_source:](<{{other.discussion.as_ref().unwrap()}}>){% endif %}{% if other.deprecated.is_some() %} :warning:{% endif %}{% if other.license == "proprietary" %} :copyright:{% endif %} — {{ other.description }}
-{% endfor %}
+  {% endfor %}
 
 {%- endfor %}
 
