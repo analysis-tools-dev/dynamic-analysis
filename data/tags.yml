@@ -195,7 +195,7 @@
   type: other
 - name: Bytecode/IR
   value: bytecode
-  type: other  
+  type: other
 - name: More collections
   value: collection
   type: other
@@ -310,3 +310,6 @@
 - name: YAML
   value: yaml
   type: other
+- name: Zig
+  value: zig
+  type: language
