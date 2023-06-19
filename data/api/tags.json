@@ -309,6 +309,11 @@
       "name": "Vim Script",
       "value": "vim-script",
       "tag_type": "Language"
+    },
+    {
+      "name": "Zig",
+      "value": "zig",
+      "tag_type": "Language"
     }
   ],
   "other": [

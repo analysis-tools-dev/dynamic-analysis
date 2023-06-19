@@ -390,6 +390,33 @@
     "demos": null,
     "wrapper": null
   },
+  "hyperfine": {
+    "name": "hyperfine",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "Apache-2.0"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/sharkdp/hyperfine",
+    "source": "https://github.com/sharkdp/hyperfine",
+    "pricing": null,
+    "plans": null,
+    "description": "A command-line benchmarking tool It features statistical analysis across multiple runs, support for arbitrary shell commands, constant feedback about the benchmark progress and current estimates, warmup runs, a simple and expressive syntax, and more.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
   "icontract": {
     "name": "icontract",
     "categories": [
@@ -764,6 +791,33 @@
     "pricing": null,
     "plans": null,
     "description": "A dynamic binary instrumentation tool and a platform for creating analysis tools.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
+  "poop": {
+    "name": "poop",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "zig"
+    ],
+    "other": [],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/andrewrk/poop",
+    "source": "https://github.com/andrewrk/poop",
+    "pricing": null,
+    "plans": null,
+    "description": "Performance Optimizer Observation Platform This command line tool uses Linux's `perf_event_open` functionality to compare the performance of multiple commands with a colorful terminal user interface. It is similar to `hyperfine`.",
     "discussion": null,
     "deprecated": null,
     "resources": null,

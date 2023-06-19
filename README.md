@@ -63,6 +63,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
     <li><a href="#rust">Rust</a></li>
     <li><a href="#sql">SQL</a></li>
     <li><a href="#vbasic">Visual Basic</a></li>
+    <li><a href="#zig">Zig</a></li>
     </ul>
 </details>
 
@@ -230,6 +231,9 @@ Here are some of the checks this enables:
 * `get_unchecked` in slices performs bounds checks * `copy`, `copy_nonoverlapping`, and `write_bytes` check that pointers are aligned and non-null and (if applicable) non-overlapping `{NonNull,NonZero*,...}::new_unchecked` check that the value is valid * plenty of internal consistency checks in the collection types * mem::zeroed and the deprecated mem::uninitialized panic if the type does not allow that kind of initialization
   
 
+- [hyperfine](https://github.com/sharkdp/hyperfine) — A command-line benchmarking tool It features statistical analysis across multiple runs, support for arbitrary shell commands, constant feedback about the benchmark progress and current estimates, warmup runs, a simple and expressive syntax, and more.
+  
+
 - [loom](https://github.com/tokio-rs/loom) — Concurrency permutation testing tool for Rust.  It runs a test many times, permuting the possible concurrent executions of that test.
   
 
@@ -257,6 +261,13 @@ Here are some of the checks this enables:
 
 
 - [VB Watch](https://www.aivosto.com/vbwatch.html) :copyright: — Profiler, Protector and Debugger for VB6. Profiler measures performance and test coverage. Protector implements robust error handling. Debugger helps monitor your executables.
+  
+
+<h2 id="zig">Zig</h2>
+
+
+
+- [poop](https://github.com/andrewrk/poop) — Performance Optimizer Observation Platform This command line tool uses Linux's `perf_event_open` functionality to compare the performance of multiple commands with a colorful terminal user interface. It is similar to `hyperfine`.
   
 
 ## Multiple languages
