@@ -1,0 +1,15 @@
+name: hyperfine
+categories:
+  - linter
+tags:
+  - rust
+license: Apache-2.0
+types:
+  - cli
+source: "https://github.com/sharkdp/hyperfine"
+homepage: "https://github.com/sharkdp/hyperfine"
+description: >-
+  A command-line benchmarking tool
+  It features statistical analysis across multiple runs, support for arbitrary
+  shell commands, constant feedback about the benchmark progress and current
+  estimates, warmup runs, a simple and expressive syntax, and more.

@@ -1,0 +1,15 @@
+name: poop
+categories:
+  - linter
+tags:
+  - zig
+license: MIT
+types:
+  - cli
+source: "https://github.com/andrewrk/poop"
+homepage: "https://github.com/andrewrk/poop"
+description: >-
+  Performance Optimizer Observation Platform
+  This command line tool uses Linux's `perf_event_open` functionality to compare
+  the performance of multiple commands with a colorful terminal user interface.
+  It is similar to `hyperfine`.
