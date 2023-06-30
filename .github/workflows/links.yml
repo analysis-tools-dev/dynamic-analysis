@@ -22,6 +22,7 @@ jobs:
           args: --verbose --no-progress README.md
       
       - name: Create Issue From File
+        if: env.lychee_exit_code != 0
         uses: peter-evans/create-issue-from-file@v4
         with:
           title: Link Checker Report
