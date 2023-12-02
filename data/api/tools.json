@@ -109,6 +109,35 @@
     "demos": null,
     "wrapper": null
   },
+  "bytehound": {
+    "name": "bytehound",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp",
+      "rust"
+    ],
+    "other": [],
+    "licenses": [
+      "NOASSERTION"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/koute/bytehound",
+    "source": "https://github.com/koute/bytehound",
+    "pricing": null,
+    "plans": null,
+    "description": "A memory profiler for Linux. Can be used to analyze memory leaks, see where exactly the memory is being consumed, identify temporary allocations and investigate excessive memory fragmentation.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
   "cadvisor": {
     "name": "cadvisor",
     "categories": [

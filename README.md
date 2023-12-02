@@ -283,6 +283,9 @@ Here are some of the checks this enables:
 - [allocscope](https://github.com/matt-kimball/allocscope) — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
   
 
+- [bytehound](https://github.com/koute/bytehound) — A memory profiler for Linux. Can be used to analyze memory leaks, see where exactly the memory is being consumed, identify temporary allocations and investigate excessive memory fragmentation.
+  
+
 - [CASR](https://crates.io/crates/casr) — Crash Analysis and Severity Report.
   
 
