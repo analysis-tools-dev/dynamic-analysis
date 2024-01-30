@@ -364,7 +364,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 
 
 
-- [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: — HCL's AppScan is a dynamic application security testing suite ([previously by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+- [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: — HCL's AppScan is a dynamic application security testing suite (previously by IBM)
   
 
 - [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
