@@ -8,5 +8,4 @@ types:
   - cli
 homepage: 'https://www.hcltechsw.com/products/appscan'
 description: >-
-  HCL's AppScan is a dynamic application security testing suite ([previously
-  by IBM](https://newsroom.ibm.com/2018-12-06-HCL-Technologies-to-Acquire-Select-IBM-Software-Products-for-1-8B)).
+  HCL's AppScan is a dynamic application security testing suite (previously by IBM)
