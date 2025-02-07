@@ -159,9 +159,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) — <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
   
 
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) — An interpreter for finding subtle bugs in programs written in standard C.
-  
-
 - [Valgrind](https://valgrind.org/) — An instrumentation framework for building dynamic analysis tools.
   
 
@@ -179,9 +176,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
   
 
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) — <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-  
-
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) — An interpreter for finding subtle bugs in programs written in standard C.
   
 
 - [Valgrind](https://valgrind.org/) — An instrumentation framework for building dynamic analysis tools.

@@ -1142,34 +1142,6 @@
     "demos": null,
     "wrapper": null
   },
-  "tis-interpreter": {
-    "name": "tis-interpreter",
-    "categories": [
-      "linter"
-    ],
-    "languages": [
-      "c",
-      "cpp"
-    ],
-    "other": [],
-    "licenses": [
-      "MIT License"
-    ],
-    "types": [
-      "cli"
-    ],
-    "homepage": "https://github.com/TrustInSoft/tis-interpreter",
-    "source": "https://github.com/TrustInSoft/tis-interpreter",
-    "pricing": null,
-    "plans": null,
-    "description": "An interpreter for finding subtle bugs in programs written in standard C.",
-    "discussion": null,
-    "deprecated": null,
-    "resources": null,
-    "reviews": null,
-    "demos": null,
-    "wrapper": null
-  },
   "triton": {
     "name": "TRITON",
     "categories": [
