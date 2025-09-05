@@ -51,8 +51,8 @@ pub async fn check_deprecated(token: String, entries: &mut Vec<Entry>) -> Result
         if let Ok(commit_list) = github.repo(owner, repo).commits().list("").await {
             let date = &commit_list[0].commit.author.date;
             let last_commit = NaiveDateTime::parse_from_str(date, "%Y-%m-%dT%H:%M:%SZ")?;
-            let last_commit_utc = DateTime::<Utc>::from_utc(last_commit, Utc);
-            let duration = Local::today().signed_duration_since(last_commit_utc.date());
+            let last_commit_utc: DateTime<Utc> = DateTime::from_naive_utc_and_offset(last_commit, Utc);
+            let duration = Local::now().date_naive().signed_duration_since(last_commit_utc.date_naive());
 
             if duration.num_days() > 365 {
                 entry.deprecated = Some(true);
