@@ -306,6 +306,9 @@ Here are some of the checks this enables:
 - [Code Pulse](http://code-pulse.com/) — Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
   
 
+- [Daikon](https://plse.cs.washington.edu/daikon/) — A dynamic detector of likely invariants. An invariant is a property  that holds at a certain program point, often seen in assert statements,  documentation, and formal specifications.
+  
+
 - [Sydr](https://sydr-fuzz.github.io/) :copyright: — Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
   
 

@@ -308,6 +308,35 @@
     "demos": null,
     "wrapper": null
   },
+  "daikon": {
+    "name": "Daikon",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp",
+      "java"
+    ],
+    "other": [],
+    "licenses": [
+      "NOASSERTION"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://plse.cs.washington.edu/daikon/",
+    "source": "https://github.com/codespecs/daikon",
+    "pricing": null,
+    "plans": null,
+    "description": "A dynamic detector of likely invariants. An invariant is a property  that holds at a certain program point, often seen in assert statements,  documentation, and formal specifications.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
   "dr-memory": {
     "name": "Dr. Memory",
     "categories": [
