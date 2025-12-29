@@ -1,0 +1,16 @@
+name: Daikon
+categories:
+  - linter
+tags:
+  - c
+  - cpp
+  - java
+license: NOASSERTION
+types:
+  - cli
+source: 'https://github.com/codespecs/daikon'
+homepage: 'https://plse.cs.washington.edu/daikon/'
+description: >-
+  A dynamic detector of likely invariants. An invariant is a property 
+  that holds at a certain program point, often seen in assert statements, 
+  documentation, and formal specifications.
