@@ -411,6 +411,11 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 - [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
   
 
+## More Collections
+
+- [AppSec Santa — DAST Tools](https://appsecsanta.com/dast-tools) - Independent comparison of DAST tools with features, pricing, and alternatives.
+- [OWASP Vulnerability Scanning Tools](https://owasp.org/www-community/Vulnerability_Scanning_Tools) - OWASP-maintained list of vulnerability scanning tools.
+
 ## License
 
 [![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
