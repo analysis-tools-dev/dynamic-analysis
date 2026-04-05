@@ -7,6 +7,7 @@
 This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more. The focus is on tools which improve code quality such as linters and formatters.
 The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings, user comments, and additional resources like videos for each tool.
 
+- [Glitch](https://github.com/Ankitajainkuniya/glitch-widget) :warning: - Runtime error capture with console monitoring, network failure detection, and rage click tracking.
 [![Website](https://img.shields.io/badge/Website-Online-2B5BAE)](https://analysis-tools.dev)
 ![CI](https://github.com/analysis-tools-dev/dynamic-analysis/workflows/CI/badge.svg)
 
