@@ -1,4 +1,4 @@
-use anyhow::{bail, Result};
+use anyhow::{Result, bail};
 use askama::Template;
 use serde::Deserialize;
 use std::cmp::Ordering;
@@ -23,8 +23,8 @@ pub struct Tag {
 }
 
 impl Tag {
-    fn new(name: &str, value: &str, tag_type: Type) -> Tag {
-        Tag {
+    fn new(name: &str, value: &str, tag_type: Type) -> Self {
+        Self {
             name: name.into(),
             value: value.into(),
             tag_type,
@@ -93,6 +93,8 @@ pub struct ParsedEntry {
 pub enum ToolType {
     #[serde(rename = "cli")]
     Commandline,
+    #[serde(rename = "gui")]
+    Gui,
     #[serde(rename = "service")]
     Service,
     #[serde(rename = "ide-plugin")]
@@ -133,13 +135,23 @@ impl Entry {
 
     pub fn from_parsed(p: ParsedEntry, tags: &[Tag]) -> Result<Entry> {
         valid(&p, tags)?;
-        let entry_tags: Result<BTreeSet<Tag>> = p.tags.iter().map(|t| get_tag(t, tags)).collect();
+
+        let tag_results: Vec<Result<Tag>> = p.tags.iter().map(|t| get_tag(t, tags)).collect();
+        let tag_errors: Vec<String> = tag_results
+            .iter()
+            .filter_map(|r| r.as_ref().err().map(|e| e.to_string()))
+            .collect();
+        if !tag_errors.is_empty() {
+            bail!("Tool '{}': {}", p.name, tag_errors.join("\n"));
+        }
+        let entry_tags: Result<BTreeSet<Tag>> = tag_results.into_iter().collect();
+
         let types: Result<BTreeSet<ToolType>> = p
             .types
             .iter()
             .map(|t| {
-                serde_json::from_value::<ToolType>(serde_json::to_value(t).unwrap())
-                    .map_err(|e| e.into())
+                let value = serde_json::to_value(t)?;
+                serde_json::from_value::<ToolType>(value).map_err(Into::into)
             })
             .collect();
 

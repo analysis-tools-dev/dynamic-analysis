@@ -1,0 +1,38 @@
+[package]
+name = "pr-check"
+version = "0.1.0"
+edition = "2024"
+description = "Checks pull requests against contributing criteria"
+license = "MIT"
+repository = "https://github.com/analysis-tools-dev/dynamic-analysis"
+publish = false
+
+[lints.clippy]
+# Keep standard checks and targeted reliability restrictions. Broad opt-in
+# groups and documentation/printing restrictions are deferred from the sister policy.
+correctness = { level = "deny", priority = -1 }
+style = { level = "warn", priority = -1 }
+complexity = { level = "warn", priority = -1 }
+perf = { level = "warn", priority = -1 }
+suspicious = { level = "warn", priority = -1 }
+
+unwrap_used = "deny"
+expect_used = "warn"
+panic = "deny"
+unimplemented = "deny"
+unreachable = "deny"
+todo = "warn"
+
+dbg_macro = "warn"
+
+
+[dependencies]
+anyhow = { workspace = true }
+askama = { workspace = true }
+chrono = { workspace = true }
+pico-args = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde-saphyr = { workspace = true }
+tokio = { workspace = true }
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
