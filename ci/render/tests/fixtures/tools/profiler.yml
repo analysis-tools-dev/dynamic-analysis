@@ -1,0 +1,7 @@
+name: Example Profiler
+categories: [profiler]
+tags: [rust]
+license: MIT
+types: [gui]
+homepage: https://example.com/profiler
+description: A profiler.
