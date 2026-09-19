@@ -5,9 +5,9 @@
 //! source repository, and evaluates each tool against the contributing
 //! criteria:
 //!
-//! - More than 20 stars
-//! - More than one contributor
-//! - Repository is at least 3 months old
+//! - At least 20 stars
+//! - More than one human contributor (excluding bots and known automation)
+//! - Repository is at least 6 calendar months old
 //!
 //! The results are either posted as a single comment on the PR (updating an
 //! existing bot comment if one already exists) or written to a file when the
@@ -30,7 +30,7 @@
 
 use anyhow::{Context, Result, bail};
 use askama::Template;
-use chrono::{DateTime, Duration, Utc};
+use chrono::{DateTime, Months, Utc};
 use serde::Deserialize;
 use std::collections::HashMap;
 use std::env;
@@ -54,9 +54,23 @@ struct RepoInfo {
 /// One item from `GET /repos/{owner}/{repo}/contributors`.
 #[derive(Debug, Deserialize)]
 struct Contributor {
+    login: String,
     #[serde(rename = "type")]
     account_type: String,
 }
+
+impl Contributor {
+    fn counts_as_human(&self) -> bool {
+        let login = self.login.to_ascii_lowercase();
+        self.account_type.eq_ignore_ascii_case("User")
+            && !login.ends_with("[bot]")
+            && !AUTOMATION_LOGINS.contains(&login.as_str())
+    }
+}
+
+// GitHub reports some automation as users. Exact logins avoid excluding humans
+// with similar names; keep this list aligned with static-analysis.
+const AUTOMATION_LOGINS: &[&str] = &["claude", "dependabot", "renovate-bot"];
 
 /// One PR comment from `GET /repos/{owner}/{repo}/issues/{pr}/comments`.
 #[derive(Debug, Deserialize)]
@@ -67,7 +81,7 @@ struct IssueComment {
 
 const MIN_STARS: u64 = 20;
 const MIN_CONTRIBUTORS: usize = 2;
-const MIN_AGE_DAYS: i64 = 90;
+const MIN_AGE_MONTHS: u32 = 6;
 
 // Marker text embedded in every comment we post so we can find and update it.
 const COMMENT_MARKER: &str = "<!-- pr-check-bot -->";
@@ -83,6 +97,10 @@ enum CheckResult {
 impl CheckResult {
     fn is_fail(&self) -> bool {
         matches!(self, Self::Fail(_))
+    }
+
+    fn is_skip(&self) -> bool {
+        matches!(self, Self::Skip(_))
     }
 
     fn symbol(&self) -> &'static str {
@@ -117,8 +135,18 @@ impl ToolReport {
         self.stars.is_fail() || self.contributors.is_fail() || self.age.is_fail()
     }
 
+    fn needs_review(&self) -> bool {
+        self.stars.is_skip() || self.contributors.is_skip() || self.age.is_skip()
+    }
+
     fn status(&self) -> &'static str {
-        if self.any_fail() { "FAIL" } else { "PASS" }
+        if self.any_fail() {
+            "FAIL"
+        } else if self.needs_review() {
+            "REVIEW"
+        } else {
+            "PASS"
+        }
     }
 }
 
@@ -128,6 +156,7 @@ struct CommentTemplate<'a> {
     marker: &'a str,
     reports: &'a [ToolReport],
     any_failures: bool,
+    any_incomplete: bool,
 }
 
 struct GithubClient {
@@ -204,10 +233,7 @@ impl GithubClient {
             return Ok(None);
         };
         // Exclude bot accounts from the contributor count.
-        let human_count = contributors
-            .iter()
-            .filter(|c| c.account_type != "Bot")
-            .count();
+        let human_count = contributors.iter().filter(|c| c.counts_as_human()).count();
         Ok(Some(human_count))
     }
 
@@ -316,8 +342,8 @@ fn read_tool(path: &Path) -> Result<ToolEntry> {
 ///
 /// # Errors
 ///
-/// Returns an error only for unexpected failures (network, auth). Missing
-/// criteria produce `CheckResult::Fail` values, not errors.
+/// Returns an error if calendar arithmetic fails. Unavailable metadata is
+/// skipped for manual review; verified unmet criteria produce failures.
 async fn check_tool(client: &GithubClient, tool: &ToolEntry) -> Result<ToolReport> {
     let source = tool.source.clone();
 
@@ -327,67 +353,8 @@ async fn check_tool(client: &GithubClient, tool: &ToolEntry) -> Result<ToolRepor
         let repo_result = client.repo_info(&owner, &repo).await;
         let contributors_result = client.contributor_count(&owner, &repo).await;
 
-        let stars_check = match &repo_result {
-            Ok(Some(info)) => {
-                let s = info.stargazers_count;
-                if s >= MIN_STARS {
-                    CheckResult::Pass(format!("{s} stars"))
-                } else {
-                    CheckResult::Fail(format!("{s} stars (minimum is {MIN_STARS})"))
-                }
-            }
-            Ok(None) => CheckResult::Skip("repository not found".into()),
-            Err(e) => CheckResult::Fail(format!("Could not fetch repo info: {e}")),
-        };
-
-        let age_check = match &repo_result {
-            Ok(Some(info)) => {
-                let age = Utc::now().signed_duration_since(info.created_at);
-                let days = age.num_days();
-                let months = days / 30;
-                if age >= Duration::days(MIN_AGE_DAYS) {
-                    CheckResult::Pass(format!("created {days} days ago (~{months} months)"))
-                } else {
-                    let remaining = MIN_AGE_DAYS - days;
-                    CheckResult::Fail(format!(
-                        "created {days} days ago, needs {remaining} more days to meet the 3-month minimum"
-                    ))
-                }
-            }
-            Ok(None) => CheckResult::Skip("repository not found".into()),
-            Err(_) => CheckResult::Skip("Could not determine age (repo info unavailable)".into()),
-        };
-
-        let contributors_check = match contributors_result {
-            Ok(Some(count)) => {
-                if count >= MIN_CONTRIBUTORS {
-                    CheckResult::Pass(format!("{count} contributors"))
-                } else {
-                    CheckResult::Fail(format!(
-                        "{count} contributor(s) (minimum is {MIN_CONTRIBUTORS})"
-                    ))
-                }
-            }
-            Ok(None) => CheckResult::Skip("repository not found".into()),
-            Err(e) => CheckResult::Fail(format!("Could not fetch contributors: {e}")),
-        };
-
-        let repo_not_found = matches!(repo_result, Ok(None));
-        let note = repo_not_found.then_some(
-            "The source URL returned a 404. Please check that the repository exists and is public.",
-        );
-
-        Ok(ToolReport {
-            name: tool.name.to_string(),
-            source,
-            stars: stars_check,
-            contributors: contributors_check,
-            age: age_check,
-            note: note.map(str::to_owned),
-        })
+        repository_report(tool, &repo_result, &contributors_result, Utc::now())
     } else {
-        // No source or non-GitHub source. This is fine for proprietary or
-        // hosted tools. Skip automated checks and leave a note for manual review.
         let note = "No GitHub source URL found. Automated checks for stars, contributor count, \
                     and age are not possible. Please verify the contributing criteria manually.";
 
@@ -402,6 +369,73 @@ async fn check_tool(client: &GithubClient, tool: &ToolEntry) -> Result<ToolRepor
     }
 }
 
+/// Evaluates fetched metadata without I/O so policy boundaries are testable.
+fn repository_report(
+    tool: &ToolEntry,
+    repo_result: &Result<Option<RepoInfo>>,
+    contributors_result: &Result<Option<usize>>,
+    now: DateTime<Utc>,
+) -> Result<ToolReport> {
+    let stars_check = match repo_result {
+        Ok(Some(info)) => {
+            let s = info.stargazers_count;
+            if s >= MIN_STARS {
+                CheckResult::Pass(format!("{s} stars"))
+            } else {
+                CheckResult::Fail(format!("{s} stars (minimum is {MIN_STARS})"))
+            }
+        }
+        Ok(None) => CheckResult::Skip("repository not found".into()),
+        Err(e) => CheckResult::Skip(format!("Could not fetch repo info: {e}")),
+    };
+
+    let age_check = match repo_result {
+        Ok(Some(info)) => {
+            let minimum_created_at = now
+                .checked_sub_months(Months::new(MIN_AGE_MONTHS))
+                .context("Current date cannot be shifted back by six months")?;
+            let days = now.signed_duration_since(info.created_at).num_days();
+            if info.created_at <= minimum_created_at {
+                CheckResult::Pass(format!("created {days} days ago (at least 6 months)"))
+            } else {
+                CheckResult::Fail(format!(
+                    "created {days} days ago (minimum is 6 calendar months)"
+                ))
+            }
+        }
+        Ok(None) => CheckResult::Skip("repository not found".into()),
+        Err(_) => CheckResult::Skip("Could not determine age (repo info unavailable)".into()),
+    };
+
+    let contributors_check = match contributors_result {
+        Ok(Some(count)) => {
+            if *count >= MIN_CONTRIBUTORS {
+                CheckResult::Pass(format!("{count} human contributors"))
+            } else {
+                CheckResult::Fail(format!(
+                    "{count} human contributor(s) (minimum is {MIN_CONTRIBUTORS})"
+                ))
+            }
+        }
+        Ok(None) => CheckResult::Skip("repository not found".into()),
+        Err(e) => CheckResult::Skip(format!("Could not fetch contributors: {e}")),
+    };
+
+    let repo_not_found = matches!(repo_result, Ok(None));
+    let note = repo_not_found.then_some(
+        "The source URL returned a 404. Please check that the repository exists and is public.",
+    );
+
+    Ok(ToolReport {
+        name: tool.name.to_string(),
+        source: tool.source.clone(),
+        stars: stars_check,
+        contributors: contributors_check,
+        age: age_check,
+        note: note.map(str::to_owned),
+    })
+}
+
 /// Renders all tool reports into a Markdown comment body.
 ///
 /// # Errors
@@ -413,6 +447,7 @@ fn render_comment(reports: &[ToolReport]) -> Result<String> {
         marker: COMMENT_MARKER,
         reports,
         any_failures,
+        any_incomplete: reports.iter().any(|r| r.needs_review()),
     }
     .render()
     .context("Failed to render comment template")
@@ -509,6 +544,226 @@ async fn main() -> Result<()> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    fn example_tool() -> ToolEntry {
+        ToolEntry {
+            name: "Example".into(),
+            source: Some("https://github.com/example/tool".into()),
+        }
+    }
+
+    #[test]
+    fn excludes_bots_and_known_automation() {
+        for login in [
+            "claude",
+            "Claude",
+            "dependabot",
+            "Dependabot",
+            "renovate-bot",
+            "RENOVATE-BOT",
+            "github-actions[bot]",
+            "some-new-app[BOT]",
+        ] {
+            let contributor = Contributor {
+                login: login.into(),
+                account_type: "User".into(),
+            };
+            assert!(!contributor.counts_as_human(), "{login}");
+        }
+        for account_type in ["Bot", "bot", "Organization", "unknown"] {
+            let contributor = Contributor {
+                login: "alice".into(),
+                account_type: account_type.into(),
+            };
+            assert!(!contributor.counts_as_human(), "{account_type}");
+        }
+        for login in [
+            "alice",
+            "claude-smith",
+            "dependabot-maintainer",
+            "robotics-researcher",
+            "human-bot",
+        ] {
+            for account_type in ["User", "user"] {
+                let contributor = Contributor {
+                    login: login.into(),
+                    account_type: account_type.into(),
+                };
+                assert!(contributor.counts_as_human(), "{login}");
+            }
+        }
+    }
+
+    #[test]
+    fn automation_does_not_satisfy_human_minimum() -> Result<()> {
+        let contributors: Vec<Contributor> = serde_saphyr::from_str(
+            "- {login: alice, type: User}\n- {login: claude, type: User}\n- {login: 'dependabot[bot]', type: Bot}\n- {login: renovate-bot, type: User}\n- {login: bob, type: User}",
+        )?;
+        let count =
+            |accounts: &[Contributor]| accounts.iter().filter(|c| c.counts_as_human()).count();
+        assert_eq!(count(&contributors[..4]), 1);
+        assert!(count(&contributors[..4]) < MIN_CONTRIBUTORS);
+        assert_eq!(count(&contributors), MIN_CONTRIBUTORS);
+        Ok(())
+    }
+
+    #[test]
+    fn repository_thresholds_and_calendar_age_boundary() -> Result<()> {
+        let created_at = "2026-03-01T12:00:00Z".parse::<DateTime<Utc>>()?;
+        let boundary = "2026-09-01T12:00:00Z".parse::<DateTime<Utc>>()?;
+        for stars in [19, 20, 21] {
+            for contributors in [0, 1, 2, 3] {
+                for seconds in [-1, 0, 1] {
+                    let report = repository_report(
+                        &example_tool(),
+                        &Ok(Some(RepoInfo {
+                            stargazers_count: stars,
+                            created_at,
+                        })),
+                        &Ok(Some(contributors)),
+                        boundary + chrono::Duration::seconds(seconds),
+                    )?;
+                    assert_eq!(report.stars.is_fail(), stars < 20);
+                    assert_eq!(report.contributors.is_fail(), contributors < 2);
+                    assert_eq!(report.age.is_fail(), seconds < 0);
+                    assert_eq!(
+                        report.any_fail(),
+                        stars < 20 || contributors < 2 || seconds < 0
+                    );
+                }
+            }
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn calendar_age_clamps_month_end() -> Result<()> {
+        let now = "2026-08-31T12:00:00Z".parse::<DateTime<Utc>>()?;
+        for (created, passes) in [
+            ("2026-02-28T12:00:00Z", true),
+            ("2026-02-28T12:00:01Z", false),
+        ] {
+            let report = repository_report(
+                &example_tool(),
+                &Ok(Some(RepoInfo {
+                    stargazers_count: 20,
+                    created_at: created.parse()?,
+                })),
+                &Ok(Some(2)),
+                now,
+            )?;
+            assert_eq!(!report.age.is_fail(), passes);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn missing_metadata_requires_review_but_verified_failures_still_fail() -> Result<()> {
+        let now = "2026-09-01T12:00:00Z".parse::<DateTime<Utc>>()?;
+        let missing = repository_report(&example_tool(), &Ok(None), &Ok(None), now)?;
+        assert_eq!(missing.status(), "REVIEW");
+        assert!(
+            missing
+                .note
+                .as_deref()
+                .is_some_and(|note| note.contains("404"))
+        );
+        let unavailable = repository_report(
+            &example_tool(),
+            &Err(anyhow::anyhow!("rate limited")),
+            &Err(anyhow::anyhow!("connection failed")),
+            now,
+        )?;
+        assert_eq!(unavailable.status(), "REVIEW");
+        let failed = repository_report(&example_tool(), &Ok(None), &Ok(Some(1)), now)?;
+        assert_eq!(failed.status(), "FAIL");
+        assert!(failed.any_fail());
+        Ok(())
+    }
+
+    #[test]
+    fn report_status_and_summary_require_complete_evidence() -> Result<()> {
+        let result = |kind| match kind {
+            0 => CheckResult::Pass("verified".into()),
+            1 => CheckResult::Fail("below minimum".into()),
+            _ => CheckResult::Skip("unavailable".into()),
+        };
+        for stars in 0..3 {
+            for contributors in 0..3 {
+                for age in 0..3 {
+                    let results = [stars, contributors, age];
+                    let fails = results.contains(&1);
+                    let incomplete = results.contains(&2);
+                    let report = ToolReport {
+                        name: "Example".into(),
+                        source: None,
+                        note: None,
+                        stars: result(stars),
+                        contributors: result(contributors),
+                        age: result(age),
+                    };
+                    assert_eq!(report.any_fail(), fails);
+                    assert_eq!(
+                        report.status(),
+                        if fails {
+                            "FAIL"
+                        } else if incomplete {
+                            "REVIEW"
+                        } else {
+                            "PASS"
+                        }
+                    );
+                    let comment = render_comment(&[report])?;
+                    assert_eq!(
+                        comment.contains("All criteria passed"),
+                        !fails && !incomplete
+                    );
+                    assert_eq!(comment.contains("Manual review required"), incomplete);
+                }
+            }
+        }
+        let passed = ToolReport {
+            name: "Passed".into(),
+            source: None,
+            note: None,
+            stars: result(0),
+            contributors: result(0),
+            age: result(0),
+        };
+        let incomplete = ToolReport {
+            name: "Incomplete".into(),
+            source: None,
+            note: None,
+            stars: result(2),
+            contributors: result(2),
+            age: result(2),
+        };
+        let comment = render_comment(&[passed, incomplete])?;
+        assert!(comment.contains("Manual review required"));
+        assert!(!comment.contains("All criteria passed"));
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn absent_or_non_github_source_requires_review() -> Result<()> {
+        let client = GithubClient::new(String::new())?;
+        for source in [None, Some("https://gitlab.com/example/tool".into())] {
+            let report = check_tool(
+                &client,
+                &ToolEntry {
+                    name: "Example".into(),
+                    source,
+                },
+            )
+            .await?;
+            assert_eq!(report.status(), "REVIEW");
+            assert!(!report.any_fail());
+            let comment = render_comment(&[report])?;
+            assert!(comment.contains("Manual review required"));
+            assert!(!comment.contains("All criteria passed"));
+        }
+        Ok(())
+    }
 
     #[test]
     fn parses_catalog() -> Result<()> {
