@@ -802,6 +802,71 @@
     "demos": null,
     "wrapper": null
   },
+  "offensive360": {
+    "name": "Offensive360",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "apex",
+      "c",
+      "cobol",
+      "cpp",
+      "csharp",
+      "dart",
+      "elixir",
+      "go",
+      "groovy",
+      "java",
+      "javascript",
+      "kotlin",
+      "lua",
+      "objectivec",
+      "perl",
+      "php",
+      "python",
+      "r",
+      "ruby",
+      "rust",
+      "scala",
+      "swift",
+      "typescript",
+      "vbnet"
+    ],
+    "other": [
+      "ci",
+      "security"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "service"
+    ],
+    "homepage": "https://offensive360.com",
+    "source": null,
+    "pricing": "https://offensive360.com/pricing/",
+    "plans": {
+      "free": false,
+      "oss": false
+    },
+    "description": "Offensive360 is an application security platform whose DAST engine crawls and tests running web applications and APIs (authenticated scanning, session handling, LLM-app testing) alongside SAST, SCA, mobile app scanning and malware/binary analysis. Findings map to OWASP Top 10 with remediation guidance. Deploys as SaaS or a self-hosted virtual appliance for offline/air-gapped networks. SARIF output; CI/CD and IDE integrations.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": [
+      {
+        "title": "Product documentation and knowledge base",
+        "url": "https://offensive360.com/knowledge-base/"
+      }
+    ],
+    "reviews": [
+      "https://www.g2.com/products/offensive360/reviews",
+      "https://www.gartner.com/reviews/market/application-security-testing/vendor/offensive-360/product/offensive-360",
+      "https://www.peerspot.com/products/offensive-360-reviews"
+    ],
+    "demos": null,
+    "wrapper": null
+  },
   "parasoft-jtest": {
     "name": "Parasoft Jtest",
     "categories": [

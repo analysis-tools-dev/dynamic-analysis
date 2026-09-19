@@ -309,6 +309,9 @@ Here are some of the checks this enables:
 - [Daikon](https://plse.cs.washington.edu/daikon/) — A dynamic detector of likely invariants. An invariant is a property  that holds at a certain program point, often seen in assert statements,  documentation, and formal specifications.
   
 
+- [Offensive360](https://offensive360.com) :copyright: — Offensive360 is an application security platform whose DAST engine crawls and tests running web applications and APIs (authenticated scanning, session handling, LLM-app testing) alongside SAST, SCA, mobile app scanning and malware/binary analysis. Findings map to OWASP Top 10 with remediation guidance. Deploys as SaaS or a self-hosted virtual appliance for offline/air-gapped networks. SARIF output; CI/CD and IDE integrations.
+  
+
 - [Sydr](https://sydr-fuzz.github.io/) :copyright: — Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
   
 
