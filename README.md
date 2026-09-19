@@ -202,7 +202,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 
 
-- [Iroh.js](https://github.com/maierfelix/Iroh) — A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+- [Iroh.js](https://github.com/maierfelix/Iroh) :warning: — A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
   
 
 - [Jalangi2](https://github.com/Samsung/jalangi2) — Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
@@ -212,7 +212,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://www.laravel-enlightn.com/) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="python">Python</h2>
@@ -229,10 +229,10 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 There is also a wider tooling around the icontract library such as  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).
   
 
-- [Scalene](https://github.com/emeryberger/scalene) — A high-performance, high-precision CPU and memory profiler for Python
+- [Scalene](https://github.com/emeryberger/scalene) :warning: — A high-performance, high-precision CPU and memory profiler for Python
   
 
-- [typo](https://github.com/aldanor/typo) — Runtime Type Checking for Python 3.
+- [typo](https://github.com/aldanor/typo) :warning: — Runtime Type Checking for Python 3.
   
 
 <h2 id="ruby">Ruby</h2>
@@ -266,7 +266,7 @@ Here are some of the checks this enables:
 - [rust-san](https://github.com/japaric/rust-san) — How-to sanitize your Rust code with built-in Rust dynamic analyzers
   
 
-- [stuck](https://github.com/jonhoo/stuck) — provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
+- [stuck](https://github.com/jonhoo/stuck) :warning: — provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
   
 
 <h2 id="sql">SQL</h2>
@@ -294,7 +294,7 @@ Here are some of the checks this enables:
 
 
 
-- [allocscope](https://github.com/matt-kimball/allocscope) — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
+- [allocscope](https://github.com/matt-kimball/allocscope) :warning: — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
   
 
 - [bytehound](https://github.com/koute/bytehound) — A memory profiler for Linux. Can be used to analyze memory leaks, see where exactly the memory is being consumed, identify temporary allocations and investigate excessive memory fragmentation.
@@ -330,6 +330,9 @@ Here are some of the checks this enables:
 - [angr](https://github.com/angr/angr) — Platform agnostic binary analysis framework from UCSB.
   
 
+- [BAP](https://github.com/BinaryAnalysisPlatform/bap) — The Carnegie Mellon University Binary Analysis Platform (CMU BAP) is a suite of utilities and libraries for the analysis of machine code. The included Primus microexecution interpreter enables dynamic analysis.
+  
+
 - [BOLT](https://github.com/facebookincubator/BOLT) — Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
   
 
@@ -352,7 +355,7 @@ Here are some of the checks this enables:
 
 
 
-- [souper](https://github.com/google/souper) — optimize LLVM IR with SMT solvers
+- [souper](https://github.com/google/souper) :warning: — optimize LLVM IR with SMT solvers
   
 
 <h2 id="cloud">Cloud</h2>
@@ -374,7 +377,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 
 
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://www.laravel-enlightn.com/) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="security">Security/DAST</h2>
@@ -384,7 +387,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 - [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: — HCL's AppScan is a dynamic application security testing suite (previously by IBM)
   
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://www.laravel-enlightn.com/) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 - [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
