@@ -1,0 +1,15 @@
+name: Keploy
+categories:
+  - testing
+languages:
+  - Go
+  - Java
+  - JavaScript
+  - Python
+license:
+  - Apache-2.0
+types:
+  - command-line
+source: https://github.com/keploy/keploy
+homepage: https://keploy.io
+description: Open-source API testing platform that automatically generates test cases and data mocks from real traffic - no coding required.
