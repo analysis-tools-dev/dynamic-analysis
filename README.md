@@ -213,7 +213,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="python">Python</h2>
@@ -357,7 +357,7 @@ Here are some of the checks this enables:
 
 
 
-- [prowler](https://prowler.pro) — Prowler is an Open Source security tool to perform AWS and Azure security best practices assessments, audits, incident response, continuous monitoring, hardening and forensics readiness.
+- [prowler](https://prowler.com/) — Prowler is an Open Source security tool to perform AWS and Azure security best practices assessments, audits, incident response, continuous monitoring, hardening and forensics readiness.
 It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, FFIEC, SOC2, AWS FTR, ENS and custom security frameworks.
   
 
@@ -372,7 +372,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 
 
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="security">Security/DAST</h2>
@@ -382,7 +382,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 - [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: — HCL's AppScan is a dynamic application security testing suite (previously by IBM)
   
 
-- [Enlightn](https://www.laravel-enlightn.com/) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 - [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.
@@ -416,4 +416,4 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 To the extent possible under law, [Matthias Endler](https://endler.dev) has waived all copyright and related or neighboring rights to this work.
 The underlying source code used to format and display that content is licensed under the MIT license.
 
-Title image [Designed by Freepik](http://www.freepik.com).
+Title image [Designed by Freepik](https://www.freepik.com/).

@@ -7,7 +7,7 @@ license: Apache-2.0 license
 types:
   - cli
 source: 'https://github.com/prowler-cloud/prowler'
-homepage: 'https://prowler.pro'
+homepage: 'https://prowler.com/'
 resources:
   - title: 'Prowler Introduction'
     url: 'https://www.youtube.com/watch?v=Oo5e45NCKFw'
