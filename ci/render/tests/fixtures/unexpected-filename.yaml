@@ -1,0 +1,7 @@
+name: Different Tool Name
+categories: [fuzzer]
+tags: [unknown-tag, another-unknown-tag]
+license: MIT
+types: [cli]
+homepage: https://example.com/tool
+description: A tool with invalid tags.

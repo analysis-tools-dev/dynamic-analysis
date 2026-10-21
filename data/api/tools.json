@@ -22,7 +22,7 @@
     "plans": null,
     "description": "allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -75,6 +75,33 @@
     "pricing": null,
     "plans": null,
     "description": "HCL's AppScan is a dynamic application security testing suite (previously by IBM)",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
+  "bap": {
+    "name": "BAP",
+    "categories": [
+      "linter"
+    ],
+    "languages": [],
+    "other": [
+      "binary"
+    ],
+    "licenses": [
+      "MIT"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://github.com/BinaryAnalysisPlatform/bap",
+    "source": "https://github.com/BinaryAnalysisPlatform/bap",
+    "pricing": null,
+    "plans": null,
+    "description": "The Carnegie Mellon University Binary Analysis Platform (CMU BAP) is a suite of utilities and libraries for the analysis of machine code. The included Primus microexecution interpreter enables dynamic analysis.",
     "discussion": null,
     "deprecated": null,
     "resources": null,
@@ -308,6 +335,35 @@
     "demos": null,
     "wrapper": null
   },
+  "daikon": {
+    "name": "Daikon",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "c",
+      "cpp",
+      "java"
+    ],
+    "other": [],
+    "licenses": [
+      "NOASSERTION"
+    ],
+    "types": [
+      "cli"
+    ],
+    "homepage": "https://plse.cs.washington.edu/daikon/",
+    "source": "https://github.com/codespecs/daikon",
+    "pricing": null,
+    "plans": null,
+    "description": "A dynamic detector of likely invariants. An invariant is a property  that holds at a certain program point, often seen in assert statements,  documentation, and formal specifications.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": null,
+    "reviews": null,
+    "demos": null,
+    "wrapper": null
+  },
   "dr-memory": {
     "name": "Dr. Memory",
     "categories": [
@@ -413,7 +469,7 @@
     "plans": null,
     "description": "A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -494,7 +550,7 @@
     "plans": null,
     "description": "A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -746,6 +802,71 @@
     "demos": null,
     "wrapper": null
   },
+  "offensive360": {
+    "name": "Offensive360",
+    "categories": [
+      "linter"
+    ],
+    "languages": [
+      "apex",
+      "c",
+      "cobol",
+      "cpp",
+      "csharp",
+      "dart",
+      "elixir",
+      "go",
+      "groovy",
+      "java",
+      "javascript",
+      "kotlin",
+      "lua",
+      "objectivec",
+      "perl",
+      "php",
+      "python",
+      "r",
+      "ruby",
+      "rust",
+      "scala",
+      "swift",
+      "typescript",
+      "vbnet"
+    ],
+    "other": [
+      "ci",
+      "security"
+    ],
+    "licenses": [
+      "proprietary"
+    ],
+    "types": [
+      "service"
+    ],
+    "homepage": "https://offensive360.com",
+    "source": null,
+    "pricing": "https://offensive360.com/pricing/",
+    "plans": {
+      "free": false,
+      "oss": false
+    },
+    "description": "Offensive360 is an application security platform whose DAST engine crawls and tests running web applications and APIs (authenticated scanning, session handling, LLM-app testing) alongside SAST, SCA, mobile app scanning and malware/binary analysis. Findings map to OWASP Top 10 with remediation guidance. Deploys as SaaS or a self-hosted virtual appliance for offline/air-gapped networks. SARIF output; CI/CD and IDE integrations.",
+    "discussion": null,
+    "deprecated": null,
+    "resources": [
+      {
+        "title": "Product documentation and knowledge base",
+        "url": "https://offensive360.com/knowledge-base/"
+      }
+    ],
+    "reviews": [
+      "https://www.g2.com/products/offensive360/reviews",
+      "https://www.gartner.com/reviews/market/application-security-testing/vendor/offensive-360/product/offensive-360",
+      "https://www.peerspot.com/products/offensive-360-reviews"
+    ],
+    "demos": null,
+    "wrapper": null
+  },
   "parasoft-jtest": {
     "name": "Parasoft Jtest",
     "categories": [
@@ -961,7 +1082,7 @@
     "plans": null,
     "description": "A high-performance, high-precision CPU and memory profiler for Python",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -1016,7 +1137,7 @@
     "plans": null,
     "description": "optimize LLVM IR with SMT solvers",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -1070,7 +1191,7 @@
     "plans": null,
     "description": "provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,
@@ -1142,34 +1263,6 @@
     "demos": null,
     "wrapper": null
   },
-  "tis-interpreter": {
-    "name": "tis-interpreter",
-    "categories": [
-      "linter"
-    ],
-    "languages": [
-      "c",
-      "cpp"
-    ],
-    "other": [],
-    "licenses": [
-      "MIT License"
-    ],
-    "types": [
-      "cli"
-    ],
-    "homepage": "https://github.com/TrustInSoft/tis-interpreter",
-    "source": "https://github.com/TrustInSoft/tis-interpreter",
-    "pricing": null,
-    "plans": null,
-    "description": "An interpreter for finding subtle bugs in programs written in standard C.",
-    "discussion": null,
-    "deprecated": null,
-    "resources": null,
-    "reviews": null,
-    "demos": null,
-    "wrapper": null
-  },
   "triton": {
     "name": "TRITON",
     "categories": [
@@ -1218,7 +1311,7 @@
     "plans": null,
     "description": "Runtime Type Checking for Python 3.",
     "discussion": null,
-    "deprecated": null,
+    "deprecated": true,
     "resources": null,
     "reviews": null,
     "demos": null,

@@ -1,0 +1,122 @@
+name: PR Check
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "data/tools/**.yml"
+      - "data/tools/**.yaml"
+      - "ci/**"
+      - ".github/workflows/pr-check.yml"
+      - ".github/workflows/pr-comment.yml"
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to check (results are uploaded as an artifact)"
+        required: true
+        type: string
+      tool_files:
+        description: "Space-separated tool YAML paths at the PR head; quote paths containing spaces"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      PR_NUMBER: ${{ github.event.pull_request.number || inputs.pr_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Select tool files
+        env:
+          TOOL_FILES: ${{ inputs.tool_files }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path, PurePosixPath
+          import re
+          import shlex
+          import subprocess
+
+          if not re.fullmatch(r"[1-9][0-9]*", os.environ["PR_NUMBER"]):
+              raise SystemExit("PR number must be a positive integer")
+          manual = os.environ["GITHUB_EVENT_NAME"] == "workflow_dispatch"
+          if manual:
+              files = shlex.split(os.environ["TOOL_FILES"])
+              if not files:
+                  raise SystemExit("Provide at least one tool file")
+          else:
+              diff = subprocess.check_output([
+                  "git", "diff", "--name-only", "--diff-filter=A", "-z",
+                  os.environ["BASE_SHA"] + "..." + os.environ["HEAD_SHA"],
+                  "--", "data/tools/*.yml", "data/tools/*.yaml",
+              ])
+              files = [os.fsdecode(path) for path in diff.split(b"\0") if path]
+          for name in files:
+              path = PurePosixPath(name)
+              if (path.parts[:2] != ("data", "tools") or ".." in path.parts
+                      or path.suffix not in (".yml", ".yaml") or ":" in name):
+                  raise SystemExit("Only paths under data/tools ending in .yml or .yaml are allowed")
+          if manual:
+              subprocess.run([
+                  "git", "fetch", "origin",
+                  "refs/pull/" + os.environ["PR_NUMBER"] + "/head",
+              ], check=True)
+              # Do not execute the PR's Rust code or workflow on manual dispatch.
+              subprocess.run(["git", "--literal-pathspecs", "checkout", "FETCH_HEAD", "--", *files], check=True)
+          root = Path("data/tools").resolve()
+          for name in files:
+              path = Path(name)
+              if path.is_symlink() or not path.is_file() or not path.resolve().is_relative_to(root):
+                  raise SystemExit("Tool paths must be regular files inside data/tools")
+          (Path(os.environ["RUNNER_TEMP"]) / "tool-files.json").write_text(json.dumps(files))
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build pr-check
+        run: cargo build --locked --release --manifest-path ci/Cargo.toml -p pr-check
+
+      - name: Run pr-check without comment permissions
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          COMMENT_OUTPUT_FILE: pr-check-output/comment.md
+        shell: python
+        run: |
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+
+          files = json.loads((Path(os.environ["RUNNER_TEMP"]) / "tool-files.json").read_text())
+          Path("pr-check-output").mkdir(exist_ok=True)
+          Path(os.environ["COMMENT_OUTPUT_FILE"]).write_text(
+              "The PR checker could not finish. Please inspect the PR Check workflow logs.\n"
+          )
+          result = subprocess.run(["ci/target/release/pr-check", *files])
+          raise SystemExit(result.returncode)
+
+      - name: Upload check feedback
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr-check-output
+          path: pr-check-output/comment.md
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Explain manual results
+        if: always() && github.event_name == 'workflow_dispatch'
+        run: |
+          echo 'Manual checks are read-only. Download pr-check-output for the report; no PR comment is posted because workflow_dispatch does not provide an associated PR.' >> "$GITHUB_STEP_SUMMARY"

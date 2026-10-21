@@ -1,0 +1,48 @@
+[package]
+name = "render"
+version = "0.2.0"
+authors = ["Matthias Endler <matthias-endler@gmx.net>"]
+edition = "2024"
+description = "Dynamic analysis tools catalog renderer"
+license = "MIT"
+repository = "https://github.com/analysis-tools-dev/dynamic-analysis"
+keywords = ["dynamic-analysis", "fuzzing", "profiling", "tools", "catalog"]
+categories = ["development-tools"]
+publish = false
+
+[lints.clippy]
+# Keep standard checks and targeted reliability restrictions. Broad opt-in
+# groups and documentation/printing restrictions are deferred from the sister policy.
+correctness = { level = "deny", priority = -1 }
+
+# Style lints
+style = { level = "warn", priority = -1 }
+complexity = { level = "warn", priority = -1 }
+perf = { level = "warn", priority = -1 }
+suspicious = { level = "warn", priority = -1 }
+
+
+unwrap_used = "deny"
+expect_used = "warn"
+panic = "deny"
+unimplemented = "deny"
+unreachable = "deny"
+todo = "warn"
+
+dbg_macro = "warn"
+
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true }
+pico-args = { workspace = true }
+serde = { workspace = true }
+serde_derive = { workspace = true }
+serde_json = { workspace = true }
+serde-saphyr = { workspace = true }
+tokio = { workspace = true }
+askama = { workspace = true }
+# Switch back to crates as soon as a new release with tokio 1.x support is
+# released. See https://github.com/softprops/hubcaps/pull/285
+hubcaps = { git="https://github.com/softprops/hubcaps" }
+slug = "0.1.6"

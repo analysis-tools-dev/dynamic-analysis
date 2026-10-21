@@ -3,11 +3,84 @@ name: CI
 on:
   pull_request:
     branches: [master]
+  push:
+    branches: [master]
+    paths:
+      - "ci/**"
+      - ".github/workflows/ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  rust:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Render list
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - name: Check formatting
+        run: cargo fmt --manifest-path ci/Cargo.toml --all -- --check
+      - name: Check workspace
+        run: cargo check --locked --manifest-path ci/Cargo.toml --workspace --all-targets
+      - name: Test workspace
+        run: cargo test --locked --manifest-path ci/Cargo.toml --workspace
+
+  readme-check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Check README.md was not edited directly
+        env:
+          AUTHOR: ${{ github.event.pull_request.user.login }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          case "$AUTHOR" in mre|jakubsacha) exit 0 ;; esac
+          if ! git diff --quiet "$BASE_SHA...$HEAD_SHA" -- README.md; then
+            mkdir -p ci-readme-output
+            printf '%s\n' 'README.md was edited directly. It is generated from the YAML files in data/tools/. Please edit those files instead and revert the README change.' > ci-readme-output/comment.md
+            echo 'README.md must not be edited directly.' >&2
+            exit 1
+          fi
+      - name: Upload README feedback
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-readme-output
+          path: ci-readme-output/comment.md
+          if-no-files-found: ignore
+          retention-days: 7
+
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Render list without credentials
+        id: render
+        # Fork code must not receive a token. The renderer supports anonymous mode.
         run: make render-skip-deprecated
+      - name: Prepare render feedback
+        if: failure() && steps.render.outcome == 'failure' && github.event_name == 'pull_request'
+        run: |
+          mkdir -p ci-render-output
+          printf '%s\n' 'The catalog renderer failed. Please check the workflow logs and compare your YAML with the other files in data/tools/.' > ci-render-output/comment.md
+      - name: Upload render feedback
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-render-output
+          path: ci-render-output/comment.md
+          if-no-files-found: ignore
+          retention-days: 7

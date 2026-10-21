@@ -1,13 +1,16 @@
 version: 2
 updates:
 - package-ecosystem: cargo
-  directory: "/data/render"
+  directory: "/ci"
   schedule:
     interval: daily
     time: "11:00"
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: tokio
-    versions:
-    - 1.1.1
-    - 1.2.0
+  open-pull-requests-limit: 1
+  groups:
+    cargo-dependencies:
+      patterns:
+        - "*"
+    cargo-security-updates:
+      applies-to: security-updates
+      patterns:
+        - "*"

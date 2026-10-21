@@ -12,48 +12,13 @@ The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based
 
 ## Sponsors
 
-This project would not be possible without the generous support of our sponsors.
+Thank you to CodeRabbit for sponsoring this project, and to everyone who has supported it over the years.
 
-<table>
-   <tr>
-      <td>
-         <a href="https://bugprove.com">
-            <picture >
-               <source width="200px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/bugprove-dark.svg">
-               <img width="200px" alt="BugProve" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/bugprove-light.svg">
-            </picture>
-         </a>
-      </td>
-      <td>
-         <a href="https://www.betterscan.io">
-            <picture >
-               <source width="200px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/betterscan-dark.svg">
-               <img width="200px" alt="Betterscan" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/betterscan-light.svg">
-            </picture>
-         </a>
-      </td>
-      <td>
-         <a href="https://www.pixee.ai/">
-            <picture >
-               <source width="200px" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/pixee-light.png">
-               <img width="200px" alt="Pixee" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/pixee-dark.png">
-            </picture>
-         </a>
-      </td>
-      <td>
-         <a href="https://semgrep.dev/">
-            <img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/semgrep.svg" />
-         </a>
-      </td>
-      <td>
-         <a href="https://offensive360.com/">
-            <img width="200px" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/offensive360.png" />
-         </a>
-      </td>
-   </tr>
-</table>
+<a href="https://coderabbit.ai">
+  <img width="200px" alt="CodeRabbit" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/sponsors/code-rabbit.svg" />
+</a>
 
-If you also want to support this project, head over to our [Github sponsors page](https://github.com/sponsors/analysis-tools-dev).
+Support this project through [GitHub Sponsors](https://github.com/sponsors/analysis-tools-dev) or [Open Collective](https://opencollective.com/analysis-tools).
 
 ## Meaning of Symbols:
 
@@ -154,9 +119,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) — <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
   
 
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) — An interpreter for finding subtle bugs in programs written in standard C.
-  
-
 - [Valgrind](https://valgrind.org/) — An instrumentation framework for building dynamic analysis tools.
   
 
@@ -174,9 +136,6 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
   
 
 - [LLVM/Clang Sanitizers](https://github.com/google/sanitizers) — <ul> <li><a href="https://github.com/google/sanitizers/wiki/AddressSanitizer">AddressSanitizer</a> - A memory error detector for C/C++</li> <li><a href="https://github.com/google/sanitizers/wiki/MemorySanitizer">MemorySanitizer</a> - A detector of uninitialized memory reads in C/C++ programs.</li> <li><a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual">ThreadSanitizer</a> - A data race detector for C/C++</li> </ul>
-  
-
-- [tis-interpreter](https://github.com/TrustInSoft/tis-interpreter) — An interpreter for finding subtle bugs in programs written in standard C.
   
 
 - [Valgrind](https://valgrind.org/) — An instrumentation framework for building dynamic analysis tools.
@@ -203,7 +162,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 
 
-- [Iroh.js](https://github.com/maierfelix/Iroh) — A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
+- [Iroh.js](https://github.com/maierfelix/Iroh) :warning: — A dynamic code analysis tool for JavaScript. Iroh allows to record your code flow in realtime, intercept runtime informations and manipulate program behaviour on the fly.
   
 
 - [Jalangi2](https://github.com/Samsung/jalangi2) — Jalangi2 is a popular framework for writing dynamic analyses for JavaScript.
@@ -213,7 +172,7 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 
 
-- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="python">Python</h2>
@@ -230,10 +189,10 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 There is also a wider tooling around the icontract library such as  a linter (pyicontract-lint) and a plug-in for Sphinx (sphinx-icontract).
   
 
-- [Scalene](https://github.com/emeryberger/scalene) — A high-performance, high-precision CPU and memory profiler for Python
+- [Scalene](https://github.com/emeryberger/scalene) :warning: — A high-performance, high-precision CPU and memory profiler for Python
   
 
-- [typo](https://github.com/aldanor/typo) — Runtime Type Checking for Python 3.
+- [typo](https://github.com/aldanor/typo) :warning: — Runtime Type Checking for Python 3.
   
 
 <h2 id="ruby">Ruby</h2>
@@ -267,7 +226,7 @@ Here are some of the checks this enables:
 - [rust-san](https://github.com/japaric/rust-san) — How-to sanitize your Rust code with built-in Rust dynamic analyzers
   
 
-- [stuck](https://github.com/jonhoo/stuck) — provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
+- [stuck](https://github.com/jonhoo/stuck) :warning: — provides a visualization for quickly identifying common bottlenecks in running, asynchronous, and concurrent applications.
   
 
 <h2 id="sql">SQL</h2>
@@ -295,7 +254,7 @@ Here are some of the checks this enables:
 
 
 
-- [allocscope](https://github.com/matt-kimball/allocscope) — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
+- [allocscope](https://github.com/matt-kimball/allocscope) :warning: — allocscope is a tool for tracking down where the most egregiously large allocations are occurring in a C, C++ or Rust codebase. It is particularly intendend to be useful for developers who want to get a handle on excessive allocations and are working in a large codebase with multiple contributors with allocations occuring in many modules or libraries.
   
 
 - [bytehound](https://github.com/koute/bytehound) — A memory profiler for Linux. Can be used to analyze memory leaks, see where exactly the memory is being consumed, identify temporary allocations and investigate excessive memory fragmentation.
@@ -305,6 +264,12 @@ Here are some of the checks this enables:
   
 
 - [Code Pulse](http://code-pulse.com/) — Code Pulse is a free real-time code coverage tool for penetration testing activities by OWASP and Code Dx ([GitHub](https://github.com/codedx/codepulse)).
+  
+
+- [Daikon](https://plse.cs.washington.edu/daikon/) — A dynamic detector of likely invariants. An invariant is a property  that holds at a certain program point, often seen in assert statements,  documentation, and formal specifications.
+  
+
+- [Offensive360](https://offensive360.com) :copyright: — Offensive360 is an application security platform whose DAST engine crawls and tests running web applications and APIs (authenticated scanning, session handling, LLM-app testing) alongside SAST, SCA, mobile app scanning and malware/binary analysis. Findings map to OWASP Top 10 with remediation guidance. Deploys as SaaS or a self-hosted virtual appliance for offline/air-gapped networks. SARIF output; CI/CD and IDE integrations.
   
 
 - [Sydr](https://sydr-fuzz.github.io/) :copyright: — Continuous Hybrid Fuzzing and Dynamic Analysis for Security Development Lifecycle.
@@ -326,6 +291,9 @@ Here are some of the checks this enables:
 
 
 - [angr](https://github.com/angr/angr) — Platform agnostic binary analysis framework from UCSB.
+  
+
+- [BAP](https://github.com/BinaryAnalysisPlatform/bap) — The Carnegie Mellon University Binary Analysis Platform (CMU BAP) is a suite of utilities and libraries for the analysis of machine code. The included Primus microexecution interpreter enables dynamic analysis.
   
 
 - [BOLT](https://github.com/facebookincubator/BOLT) — Binary Optimization and Layout Tool - A linux command-line utility used for optimizing performance of binaries  with profile guided permutation of linking to improve cache efficiency
@@ -350,7 +318,7 @@ Here are some of the checks this enables:
 
 
 
-- [souper](https://github.com/google/souper) — optimize LLVM IR with SMT solvers
+- [souper](https://github.com/google/souper) :warning: — optimize LLVM IR with SMT solvers
   
 
 <h2 id="cloud">Cloud</h2>
@@ -372,7 +340,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 
 
 
-- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 <h2 id="security">Security/DAST</h2>
@@ -382,7 +350,7 @@ It contains hundreds of controls covering CIS, PCI-DSS, ISO27001, GDPR, HIPAA, F
 - [AppScan Standard](https://www.hcltechsw.com/products/appscan) :copyright: — HCL's AppScan is a dynamic application security testing suite (previously by IBM)
   
 
-- [Enlightn](https://github.com/enlightn/enlightn) — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
+- [Enlightn](https://github.com/enlightn/enlightn) :warning: — A static and dynamic analysis tool for Laravel applications that provides recommendations to improve the performance, security and code reliability of Laravel apps. Contains 120 automated checks.
   
 
 - [WhiteHat Sentinel Dynamic](https://www.synopsys.com/software-integrity/security-testing/dast.html) :copyright: — Part of the WhiteHat Application Security Platform. Dynamic application security scanner that covers the OWASP Top 10.

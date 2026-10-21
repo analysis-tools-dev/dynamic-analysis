@@ -1,0 +1,7 @@
+name: Example Fuzzer
+categories: [fuzzer]
+tags: [rust]
+license: MIT
+types: [cli]
+homepage: https://example.com/fuzzer
+description: A fuzzer.

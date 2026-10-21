@@ -1,0 +1,4 @@
+{
+  "example-fuzzer": { "deprecated": true },
+  "example-profiler": { "deprecated": true }
+}
