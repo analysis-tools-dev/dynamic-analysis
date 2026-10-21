@@ -57,7 +57,10 @@ fn read_tools(path: PathBuf, tags: &[Tag]) -> Result<Vec<Entry>> {
 fn backfill_deprecated(tools: &mut Vec<Entry>, path: &Path) -> Result<()> {
     let tools_raw = match fs::read_to_string(path) {
         Ok(content) => content,
-        Err(_) => return Ok(()), // No old data to backfill from. Skip silently.
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => return Ok(()),
+        Err(error) => {
+            return Err(error).with_context(|| format!("Cannot read {}", path.display()));
+        }
     };
 
     let old_tools_data: BTreeMap<String, serde_json::Value> = serde_json::from_str(&tools_raw)
@@ -75,7 +78,8 @@ fn backfill_deprecated(tools: &mut Vec<Entry>, path: &Path) -> Result<()> {
     Ok(())
 }
 
-fn main() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     let mut args = Arguments::from_env();
     let args = Args {
         tags: args.value_from_os_str("--tags", parse_path)?,
@@ -95,7 +99,7 @@ fn main() -> Result<()> {
     let old_tools_path = args.json_out.join("tools.json");
 
     match (should_check_deprecation, github_token) {
-        (true, Ok(token)) => check_deprecated(token, &mut tools)?,
+        (true, Ok(token)) => check_deprecated(token, &mut tools).await?,
         (true, Err(_)) => {
             eprintln!("No GITHUB_TOKEN environment variable found. Reusing old deprecation data.");
             backfill_deprecated(&mut tools, &old_tools_path)?;
@@ -205,54 +209,69 @@ mod tests {
     }
 
     #[test]
-    fn malformed_yaml_reports_actual_path() {
+    fn malformed_yaml_reports_actual_path() -> Result<()> {
         let path = fixture("malformed.yaml");
-        let error = read_tool(&path, &tags()).unwrap_err();
+        let error = read_tool(&path, &tags())
+            .err()
+            .context("Expected input error")?;
         assert!(
             error
                 .to_string()
                 .contains(&format!("Cannot parse {}", path.display()))
         );
-        let error = read_tags(path.clone()).unwrap_err();
+        let error = read_tags(path.clone())
+            .err()
+            .context("Expected input error")?;
         assert!(
             error
                 .to_string()
                 .contains(&format!("Cannot parse {}", path.display()))
         );
+        Ok(())
     }
 
     #[test]
-    fn invalid_tags_report_actual_path_and_all_errors() {
+    fn invalid_tags_report_actual_path_and_all_errors() -> Result<()> {
         let path = fixture("unexpected-filename.yaml");
-        let error = format!("{:#}", read_tool(&path, &tags()).unwrap_err());
+        let error = format!(
+            "{:#}",
+            read_tool(&path, &tags())
+                .err()
+                .context("Expected input error")?
+        );
         assert!(error.contains(&path.display().to_string()));
         assert!(error.contains("Different Tool Name"));
         assert!(error.contains("Invalid tag: unknown-tag"));
         assert!(error.contains("Invalid tag: another-unknown-tag"));
         assert!(!error.contains("different-tool-name.yml"));
+        Ok(())
     }
 
     #[test]
-    fn missing_inputs_report_actual_path() {
+    fn missing_inputs_report_actual_path() -> Result<()> {
         let path = fixture("missing.yaml");
         assert!(
             read_tool(&path, &tags())
-                .unwrap_err()
+                .err()
+                .context("Expected input error")?
                 .to_string()
                 .contains(&path.display().to_string())
         );
         assert!(
             read_tags(path.clone())
-                .unwrap_err()
+                .err()
+                .context("Expected input error")?
                 .to_string()
                 .contains(&path.display().to_string())
         );
         assert!(
             read_tools(path.clone(), &tags())
-                .unwrap_err()
+                .err()
+                .context("Expected input error")?
                 .to_string()
                 .contains(&path.display().to_string())
         );
+        Ok(())
     }
 
     #[test]
@@ -270,6 +289,20 @@ mod tests {
         let previous = tools.clone();
         backfill_deprecated(&mut tools, &fixture("missing.json"))?;
         assert_eq!(tools, previous);
+        Ok(())
+    }
+
+    #[test]
+    fn cache_read_errors_are_not_silently_ignored() -> Result<()> {
+        let path = fixture("tools");
+        let error = backfill_deprecated(&mut Vec::new(), &path)
+            .err()
+            .context("Expected input error")?;
+        assert!(
+            error
+                .to_string()
+                .contains(&format!("Cannot read {}", path.display()))
+        );
         Ok(())
     }
 

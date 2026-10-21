@@ -2,10 +2,11 @@
 extern crate serde_derive;
 
 use anyhow::Result;
-use chrono::{DateTime, Local, NaiveDateTime, Utc};
-use hubcaps::{Credentials, Github};
 use slug::slugify;
 use stats::StatsRaw;
+
+mod github;
+pub use github::check_deprecated;
 
 mod lints;
 pub mod stats;
@@ -17,54 +18,6 @@ use types::{Api, ApiEntry, Catalog, Entry, ParsedEntry, Tag, Type};
 fn valid(entry: &ParsedEntry, tags: &[Tag]) -> Result<()> {
     let lints = [lints::name, lints::min_one_tag];
     lints.iter().try_for_each(|lint| lint(entry, tags))
-}
-
-#[tokio::main]
-pub async fn check_deprecated(token: String, entries: &mut Vec<Entry>) -> Result<()> {
-    println!("Checking for deprecated entries on Github. This might take a while...");
-    let github = Github::new(
-        String::from("analysis tools bot"),
-        Credentials::Token(token),
-    )?;
-
-    for entry in entries {
-        if entry.source.is_none() {
-            continue;
-        }
-
-        let Some(source) = entry.source.as_ref() else {
-            continue;
-        };
-        let components: Vec<&str> = source.trim_end_matches('/').split('/').collect();
-        if !(components.contains(&"github.com") && components.len() == 5) {
-            // valid github source must have 5 elements - anything longer and they are probably a
-            // reference to a path inside a repo, rather than a repo itself.
-            continue;
-        }
-
-        let owner = components[3];
-        let repo = components[4];
-
-        if let Ok(commit_list) = github.repo(owner, repo).commits().list("").await {
-            let Some(commit) = commit_list.first() else {
-                continue;
-            };
-            let date = &commit.commit.author.date;
-            let last_commit = NaiveDateTime::parse_from_str(date, "%Y-%m-%dT%H:%M:%SZ")?;
-            let last_commit_utc: DateTime<Utc> =
-                DateTime::from_naive_utc_and_offset(last_commit, Utc);
-            let now = Local::now().date_naive();
-            let duration = now.signed_duration_since(last_commit_utc.date_naive());
-
-            if duration.num_days() > 365 {
-                entry.deprecated = Some(true);
-            } else {
-                entry.deprecated = None;
-            }
-        }
-    }
-
-    Ok(())
 }
 
 pub fn create_catalog(entries: &[Entry], languages: &[Tag], other_tags: &[Tag]) -> Result<Catalog> {
@@ -176,6 +129,20 @@ pub fn create_api(catalog: Catalog, languages: &[Tag], other_tags: &[Tag]) -> Re
     Ok(api_entries)
 }
 
+pub fn format_stats(stats: StatsRaw) -> BTreeMap<String, String> {
+    stats
+        .data
+        .result
+        .into_iter()
+        .map(|r| {
+            (
+                r.metric.path.trim_start_matches("/tool/").to_string(),
+                r.value.1,
+            )
+        })
+        .collect()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -193,18 +160,4 @@ mod tests {
             "it-has-dashes".to_string()
         );
     }
-}
-
-pub fn format_stats(stats: StatsRaw) -> BTreeMap<String, String> {
-    stats
-        .data
-        .result
-        .into_iter()
-        .map(|r| {
-            (
-                r.metric.path.trim_start_matches("/tool/").to_string(),
-                r.value.1,
-            )
-        })
-        .collect()
 }

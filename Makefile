@@ -26,7 +26,7 @@ check:
 	cargo check --locked --workspace --manifest-path ci/Cargo.toml
 
 clippy:
-	cargo clippy --locked --workspace --manifest-path ci/Cargo.toml -- -D warnings
+	cargo clippy --locked --workspace --all-targets --manifest-path ci/Cargo.toml -- -D warnings
 
 fmt:
 	cargo fmt --all --manifest-path ci/Cargo.toml
