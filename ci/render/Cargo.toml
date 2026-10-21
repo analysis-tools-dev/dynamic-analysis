@@ -42,7 +42,5 @@ serde_json = { workspace = true }
 serde-saphyr = { workspace = true }
 tokio = { workspace = true }
 askama = { workspace = true }
-# Switch back to crates as soon as a new release with tokio 1.x support is
-# released. See https://github.com/softprops/hubcaps/pull/285
-hubcaps = { git="https://github.com/softprops/hubcaps" }
+reqwest = { workspace = true }
 slug = "0.1.6"

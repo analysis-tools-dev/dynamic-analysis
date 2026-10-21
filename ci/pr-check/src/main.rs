@@ -173,6 +173,7 @@ impl GithubClient {
     fn new(token: String) -> Result<Self> {
         let client = reqwest::Client::builder()
             .user_agent("pr-check-bot/1.0 (analysis-tools-dev)")
+            .timeout(std::time::Duration::from_secs(30))
             .build()
             .context("Failed to build HTTP client")?;
         Ok(Self { client, token })
@@ -818,14 +819,16 @@ mod tests {
     }
 
     #[test]
-    fn render_comment_no_files() {
-        let comment = render_comment(&[]).unwrap();
+    fn render_comment_no_files() -> Result<()> {
+        let comment = render_comment(&[])?;
         assert!(comment.contains("No new tool files detected"));
+        Ok(())
     }
 
     #[test]
-    fn render_comment_contains_marker() {
-        let comment = render_comment(&[]).unwrap();
+    fn render_comment_contains_marker() -> Result<()> {
+        let comment = render_comment(&[])?;
         assert!(comment.contains(COMMENT_MARKER));
+        Ok(())
     }
 }

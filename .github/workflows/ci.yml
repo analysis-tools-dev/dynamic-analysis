@@ -22,11 +22,13 @@ jobs:
           persist-credentials: false
       - uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt
+          components: rustfmt, clippy
       - name: Check formatting
         run: cargo fmt --manifest-path ci/Cargo.toml --all -- --check
       - name: Check workspace
         run: cargo check --locked --manifest-path ci/Cargo.toml --workspace --all-targets
+      - name: Lint workspace
+        run: make clippy
       - name: Test workspace
         run: cargo test --locked --manifest-path ci/Cargo.toml --workspace
 
