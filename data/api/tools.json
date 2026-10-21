@@ -463,7 +463,7 @@
     "types": [
       "cli"
     ],
-    "homepage": "https://www.laravel-enlightn.com/",
+    "homepage": "https://github.com/enlightn/enlightn",
     "source": "https://github.com/enlightn/enlightn",
     "pricing": null,
     "plans": null,
@@ -990,7 +990,7 @@
     "types": [
       "cli"
     ],
-    "homepage": "https://prowler.pro",
+    "homepage": "https://prowler.com/",
     "source": "https://github.com/prowler-cloud/prowler",
     "pricing": null,
     "plans": null,
