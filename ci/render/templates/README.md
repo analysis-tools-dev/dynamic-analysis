@@ -1,14 +1,15 @@
-<!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit `data/tools.yml` instead. 🚨🚨 -->
+<!-- 🚨🚨 DON'T EDIT THIS FILE DIRECTLY. Edit files in `data/tools/` instead. 🚨🚨 -->
 
 <a href="https://analysis-tools.dev/">
   <img alt="Analysis Tools Website" src="https://raw.githubusercontent.com/analysis-tools-dev/assets/master/static/redesign.svg" />
 </a>
 
-This repository lists **dynamic analysis tools** for all programming languages, build tools, config files and more. The focus is on tools which improve code quality such as linters and formatters.
+This repository lists **dynamic analysis tools** for finding problems in running programs. It includes profilers, fuzzers, runtime analysis tools, and security testing tools.
 The official website, [analysis-tools.dev](https://analysis-tools.dev/) is based on this repository and adds rankings, user comments, and additional resources like videos for each tool.
 
 [![Website](https://img.shields.io/badge/Website-Online-2B5BAE)](https://analysis-tools.dev)
-![CI](https://github.com/analysis-tools-dev/dynamic-analysis/workflows/CI/badge.svg)
+[![CI](https://github.com/analysis-tools-dev/dynamic-analysis/workflows/CI/badge.svg)](https://github.com/analysis-tools-dev/dynamic-analysis/actions/workflows/ci.yml)
+[![Links](https://github.com/analysis-tools-dev/dynamic-analysis/actions/workflows/links.yml/badge.svg)](https://github.com/analysis-tools-dev/dynamic-analysis/actions/workflows/links.yml)
 
 ## Sponsors
 
@@ -33,24 +34,26 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 #### [Programming Languages](#programming-languages-1)
 
-<details>
- <summary>Show languages</summary>
-  <!-- Please use HTML syntax here so that it works for Github and mkdocs -->
-  <ul>
-    {% for (language, _) in linters -%}
-      <li><a href="#{{ language.value }}">{{ language.name }}</a></li>
-    {% endfor -%}
-  </ul>
-</details>
+| | | |
+|---|---|---|
+{%- for row in self.linter_rows() %}
+|{% for language in row %} [{{ language.name }}](#{{ language.value }}) |{% endfor %}
+{%- endfor %}
 
 #### [Multiple languages](#multiple-languages-1)
 
 #### [Other](#other-1)
 
-{% for (tag, _) in others %}
+<details>
+<summary>Show Other</summary>
 
-- [{{ tag.name }}](#{{ tag.value }})
-  {% endfor %}
+| | | |
+|---|---|---|
+{%- for row in self.other_rows() %}
+|{% for tag in row %} [{{ tag.name }}](#{{ tag.value }}) |{% endfor %}
+{%- endfor %}
+
+</details>
 
 ---
 
@@ -58,32 +61,25 @@ Also check out the sister project, [awesome-static-analysis](https://github.com/
 
 {%- for (language, linters) in linters %}
 
-<h2 id="{{ language.value }}">{{ language.name }}</h2>
+<a id="{{ language.value }}"></a>
+<h2>{{ language.name }}</h2>
 
-{% for linter in linters %}
-
-- [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
-  {% endfor %}
+{% call tool_list(linters) %}
 
 {%- endfor %}
 
 ## Multiple languages
 
-{% for linter in multi %}
-
-- [{{linter.name }}]({{linter.homepage }}){% if linter.discussion.is_some() %} [:information_source:](<{{linter.discussion.as_ref().unwrap()}}>){% endif %}{% if linter.deprecated.is_some() %} :warning:{% endif %}{% if linter.license == "proprietary" %} :copyright:{% endif %} — {{ linter.description }}
-  {% endfor %}
+{% call tool_list(multi) %}
 
 ## Other
 
 {% for (tag, others) in others %}
 
-<h2 id="{{ tag.value }}">{{ tag.name }}</h2>
+<a id="{{ tag.value }}"></a>
+<h2>{{ tag.name }}</h2>
 
-{% for other in others %}
-
-- [{{ other.name }}]({{ other.homepage }}){% if other.discussion.is_some() %} [:information_source:](<{{other.discussion.as_ref().unwrap()}}>){% endif %}{% if other.deprecated.is_some() %} :warning:{% endif %}{% if other.license == "proprietary" %} :copyright:{% endif %} — {{ other.description }}
-  {% endfor %}
+{% call tool_list(others) %}
 
 {%- endfor %}
 
@@ -95,3 +91,25 @@ To the extent possible under law, [Matthias Endler](https://endler.dev) has waiv
 The underlying source code used to format and display that content is licensed under the MIT license.
 
 Title image [Designed by Freepik](https://www.freepik.com/).
+
+{% macro tool(tool) -%}
+- [{{ tool.name }}]({{ tool.homepage }}){% if let Some(discussion) = tool.discussion %} [:information_source:](<{{ discussion }}>){% endif %}{% if tool.is_deprecated() %} :warning:{% endif %}{% if tool.license == "proprietary" %} :copyright:{% endif %} — {{ tool.description }}
+{%- endmacro %}
+
+{% macro tool_list(entries) -%}
+{% for tool in self.active(entries) %}
+{% call tool(tool) %}
+{% endfor %}
+{% for tool in self.deprecated(entries) %}
+{% if loop.first %}
+<details>
+<summary>Show Deprecated</summary>
+
+{% endif %}
+{% call tool(tool) %}
+{% if loop.last %}
+
+</details>
+{% endif %}
+{% endfor %}
+{%- endmacro %}
