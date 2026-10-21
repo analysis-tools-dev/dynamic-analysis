@@ -6,9 +6,8 @@ not qualify yet, wait until it does rather than opening a pull request or issue.
 
 ### Requirements
 
-Before submitting, each tool must
-
-- have existed for at least six months
+Before submitting, each tool must have been publicly available for at least
+six months. Open-source tools must also
 - have at least 20 stars on GitHub
 - have more than one human contributor
 
@@ -17,16 +16,25 @@ check excludes GitHub bot accounts, logins ending in `[bot]`, and known automati
 accounts such as `claude`, `dependabot`, and `renovate-bot`, even when GitHub lists
 them as ordinary users.
 
-These requirements apply to all tools. Meeting the minimum criteria does not
-guarantee inclusion.
+For proprietary tools, include public, reproducible examples of execution: the
+test target or workload, how to run the tool, and its findings. Also provide
+evidence of use or a substantive evaluation by someone outside the team behind
+the tool. Marketing claims, download counts, and testimonials alone are not
+enough. Link evidence of at least six months of public availability and where
+to install or try the tool; domain age alone does not establish product age.
 
-For new tool entries, the PR checker uses GitHub repository metadata to check
-stars, human contributors, and age. Age is measured by subtracting six calendar
+Meeting the minimum criteria does not guarantee inclusion.
+
+For new open-source tool entries, the PR checker uses GitHub repository metadata
+to check stars, human contributors, and age. Age is measured by subtracting six calendar
 months from the check date, not by counting 180 days. Verified unmet criteria
 fail the check, but the checker does not automatically close pull requests.
 Missing or unavailable metadata, non-GitHub sources, and tools without a source
-URL require manual review. Skipped checks do not count as passes; please provide
-evidence of age, usage, and human maintenance for reviewers.
+URL require manual review. Proprietary tools always require manual review of
+the evidence above, even when they link a GitHub repository. Review results exit
+with a nonzero status, not a pass; rerunning CI will not verify supplied evidence.
+Please include supporting links in the PR description. Manual review is for
+evidence automation cannot verify, not a substitute for missing evidence.
 
 ### Format
 

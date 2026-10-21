@@ -5,9 +5,10 @@
 //! source repository, and evaluates each tool against the contributing
 //! criteria:
 //!
-//! - At least 20 stars
-//! - More than one human contributor (excluding bots and known automation)
-//! - Repository is at least 6 calendar months old
+//! - At least 20 stars for open-source tools
+//! - More than one human contributor for open-source tools (excluding automation)
+//! - Public availability for at least 6 calendar months (repository age for automated checks)
+//! - Manual evidence review for proprietary tools, even with a GitHub source
 //!
 //! The results are either posted as a single comment on the PR (updating an
 //! existing bot comment if one already exists) or written to a file when the
@@ -17,7 +18,7 @@
 //! picks up the file and posts the comment with the necessary permissions.
 //!
 //! The process exits with a non-zero status code when any hard criterion is
-//! not met, causing CI to fail.
+//! not met or requires manual review, causing CI to fail.
 //!
 //! Expected environment variables:
 //!   GITHUB_TOKEN        - a token for GitHub API reads; `pull-requests: write`
@@ -35,6 +36,7 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use std::env;
 use std::path::{Path, PathBuf};
+use std::process::ExitCode;
 
 /// A minimal tool entry parsed from `data/tools/<name>.yml`.
 /// Only the fields needed for the contributing criteria check are required.
@@ -42,6 +44,15 @@ use std::path::{Path, PathBuf};
 struct ToolEntry {
     name: String,
     source: Option<String>,
+    license: Option<String>,
+}
+
+impl ToolEntry {
+    fn is_proprietary(&self) -> bool {
+        self.license
+            .as_deref()
+            .is_some_and(|license| license.trim().eq_ignore_ascii_case("proprietary"))
+    }
 }
 
 /// Response from `GET /repos/{owner}/{repo}`.
@@ -347,7 +358,10 @@ fn read_tool(path: &Path) -> Result<ToolEntry> {
 async fn check_tool(client: &GithubClient, tool: &ToolEntry) -> Result<ToolReport> {
     let source = tool.source.clone();
 
-    let gh_coords = source.as_deref().and_then(parse_github_repo);
+    let gh_coords = source
+        .as_deref()
+        .filter(|_| !tool.is_proprietary())
+        .and_then(parse_github_repo);
 
     if let Some((owner, repo)) = gh_coords {
         let repo_result = client.repo_info(&owner, &repo).await;
@@ -355,8 +369,19 @@ async fn check_tool(client: &GithubClient, tool: &ToolEntry) -> Result<ToolRepor
 
         repository_report(tool, &repo_result, &contributors_result, Utc::now())
     } else {
-        let note = "No GitHub source URL found. Automated checks for stars, contributor count, \
-                    and age are not possible. Please verify the contributing criteria manually.";
+        let note = if tool.is_proprietary() {
+            "For proprietary tools, please include public links in your PR description showing:\n\n\
+             - Reproducible execution: the test target or workload, how to run the tool, and its findings.\n\
+             - Independent usage or a substantive evaluation by someone outside the team.\n\
+             - Public availability for at least six months, and where to install or try the tool.\n\n\
+             Marketing claims, download counts, and testimonials alone are not enough. \
+             Domain age does not establish product age. These requirements apply even with a GitHub source. \
+             A maintainer must review the evidence; rerunning CI won't clear this check."
+        } else {
+            "No GitHub source URL found. Automated checks for stars, contributor count, \
+             and age are not possible. Please provide evidence of public availability, stars, \
+             and human contributors for manual review."
+        };
 
         Ok(ToolReport {
             name: tool.name.to_string(),
@@ -480,8 +505,16 @@ fn parse_pr_number(s: &str) -> Result<u64> {
         .with_context(|| format!("Invalid PR number: {s}"))
 }
 
+fn reports_exit_code(reports: &[ToolReport]) -> ExitCode {
+    if reports.iter().any(|r| r.any_fail() || r.needs_review()) {
+        ExitCode::FAILURE
+    } else {
+        ExitCode::SUCCESS
+    }
+}
+
 #[tokio::main]
-async fn main() -> Result<()> {
+async fn main() -> Result<ExitCode> {
     let token = env::var("GITHUB_TOKEN").context("GITHUB_TOKEN not set")?;
     let gh_repo = env::var("GITHUB_REPOSITORY").context("GITHUB_REPOSITORY not set")?;
     let pr_number_str = env::var("PR_NUMBER").context("PR_NUMBER not set")?;
@@ -535,10 +568,11 @@ async fn main() -> Result<()> {
     let any_failures = reports.iter().any(|r| r.any_fail());
     if any_failures {
         eprintln!("One or more tools failed the contributing criteria check.");
-        std::process::exit(1);
+    } else if reports.iter().any(|r| r.needs_review()) {
+        eprintln!("One or more tools require manual review of the supporting evidence.");
     }
 
-    Ok(())
+    Ok(reports_exit_code(&reports))
 }
 
 #[cfg(test)]
@@ -549,7 +583,63 @@ mod tests {
         ToolEntry {
             name: "Example".into(),
             source: Some("https://github.com/example/tool".into()),
+            license: None,
         }
+    }
+
+    #[test]
+    fn recognizes_proprietary_license() -> Result<()> {
+        for (license, expected) in [
+            ("proprietary", true),
+            ("Proprietary", true),
+            ("  PROPRIETARY  ", true),
+            ("MIT", false),
+        ] {
+            let tool: ToolEntry =
+                serde_saphyr::from_str(&format!("name: Example\nlicense: '{license}'\n"))?;
+            assert_eq!(tool.is_proprietary(), expected);
+        }
+        let tool: ToolEntry = serde_saphyr::from_str("name: Example")?;
+        assert!(!tool.is_proprietary());
+        Ok(())
+    }
+
+    #[tokio::test]
+    async fn proprietary_tools_require_evidence_even_with_github_source() -> Result<()> {
+        // An invalid authorization header ensures this path cannot use the API.
+        let client = GithubClient::new("unused\ninvalid".into())?;
+        for source in [
+            None,
+            Some("https://github.com/example/tool".into()),
+            Some("https://gitlab.com/example/tool".into()),
+        ] {
+            let tool = ToolEntry {
+                name: "Example".into(),
+                source,
+                license: Some("proprietary".into()),
+            };
+            let report = check_tool(&client, &tool).await?;
+            assert_eq!(report.status(), "REVIEW");
+            assert!(!report.any_fail());
+            assert_eq!(report.source, tool.source);
+            assert_eq!(
+                reports_exit_code(std::slice::from_ref(&report)),
+                ExitCode::FAILURE
+            );
+            let comment = render_comment(&[report])?;
+            for expected in [
+                "Reproducible execution: the test target or workload, how to run the tool, and its findings",
+                "Independent usage or a substantive evaluation by someone outside the team",
+                "Public availability for at least six months",
+                "where to install or try the tool",
+                "Marketing claims, download counts, and testimonials alone are not enough",
+                "rerunning CI won't clear this check",
+            ] {
+                assert!(comment.contains(expected), "{expected}");
+            }
+            assert!(!comment.contains("All criteria passed"));
+        }
+        Ok(())
     }
 
     #[test]
@@ -675,9 +765,14 @@ mod tests {
             now,
         )?;
         assert_eq!(unavailable.status(), "REVIEW");
+        assert_eq!(
+            reports_exit_code(&[missing, unavailable]),
+            ExitCode::FAILURE
+        );
         let failed = repository_report(&example_tool(), &Ok(None), &Ok(Some(1)), now)?;
         assert_eq!(failed.status(), "FAIL");
         assert!(failed.any_fail());
+        assert_eq!(reports_exit_code(&[failed]), ExitCode::FAILURE);
         Ok(())
     }
 
@@ -713,6 +808,14 @@ mod tests {
                             "PASS"
                         }
                     );
+                    assert_eq!(
+                        reports_exit_code(std::slice::from_ref(&report)),
+                        if fails || incomplete {
+                            ExitCode::FAILURE
+                        } else {
+                            ExitCode::SUCCESS
+                        }
+                    );
                     let comment = render_comment(&[report])?;
                     assert_eq!(
                         comment.contains("All criteria passed"),
@@ -738,7 +841,10 @@ mod tests {
             contributors: result(2),
             age: result(2),
         };
-        let comment = render_comment(&[passed, incomplete])?;
+        assert_eq!(reports_exit_code(&[]), ExitCode::SUCCESS);
+        let reports = [passed, incomplete];
+        assert_eq!(reports_exit_code(&reports), ExitCode::FAILURE);
+        let comment = render_comment(&reports)?;
         assert!(comment.contains("Manual review required"));
         assert!(!comment.contains("All criteria passed"));
         Ok(())
@@ -753,6 +859,7 @@ mod tests {
                 &ToolEntry {
                     name: "Example".into(),
                     source,
+                    license: None,
                 },
             )
             .await?;
