@@ -122,6 +122,11 @@ pub struct Entry {
 }
 
 impl Entry {
+    /// Whether the tool is marked as deprecated or unmaintained.
+    pub fn is_deprecated(&self) -> bool {
+        self.deprecated.unwrap_or(false)
+    }
+
     pub fn is_c_cpp(&self) -> bool {
         self.tags
             == [
@@ -205,6 +210,36 @@ pub struct Catalog {
     pub linters: EntryMap,
     pub others: EntryMap,
     pub multi: Vec<Entry>,
+}
+
+impl Catalog {
+    fn linter_rows(&self) -> Vec<Vec<&Tag>> {
+        Self::navigation_rows(&self.linters)
+    }
+
+    fn other_rows(&self) -> Vec<Vec<&Tag>> {
+        Self::navigation_rows(&self.others)
+    }
+
+    fn navigation_rows(entries: &EntryMap) -> Vec<Vec<&Tag>> {
+        entries
+            .keys()
+            .collect::<Vec<_>>()
+            .chunks(3)
+            .map(<[_]>::to_vec)
+            .collect()
+    }
+
+    fn active<'a>(&self, entries: &'a [Entry]) -> Vec<&'a Entry> {
+        entries
+            .iter()
+            .filter(|tool| !tool.is_deprecated())
+            .collect()
+    }
+
+    fn deprecated<'a>(&self, entries: &'a [Entry]) -> Vec<&'a Entry> {
+        entries.iter().filter(|tool| tool.is_deprecated()).collect()
+    }
 }
 
 /// An entry of the machine-readable JSON out from the tool.
