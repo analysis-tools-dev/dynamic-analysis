@@ -147,6 +147,41 @@ pub fn format_stats(stats: StatsRaw) -> BTreeMap<String, String> {
 mod tests {
     use super::*;
 
+    fn parsed_entry(name: &str) -> ParsedEntry {
+        ParsedEntry {
+            name: name.into(),
+            categories: [types::Category::Fuzzer].into_iter().collect(),
+            tags: ["rust".into()].into_iter().collect(),
+            license: "MIT".into(),
+            types: ["cli".into()].into_iter().collect(),
+            homepage: "https://example.com/fuzzer".into(),
+            source: None,
+            pricing: None,
+            plans: None,
+            description: "A fuzzer.".into(),
+            discussion: None,
+            deprecated: None,
+            resources: None,
+            reviews: None,
+            demos: None,
+            wrapper: None,
+        }
+    }
+
+    #[test]
+    fn rejects_blank_tool_names() {
+        let tags = [Tag {
+            name: "Rust".into(),
+            value: "rust".into(),
+            tag_type: Type::Language,
+        }];
+
+        for name in ["", " \t\n"] {
+            assert!(Entry::from_parsed(parsed_entry(name), &tags).is_err());
+        }
+        assert!(Entry::from_parsed(parsed_entry("Example Fuzzer"), &tags).is_ok());
+    }
+
     #[test]
     fn test_slugify() {
         assert_eq!(slugify("this is a test"), "this-is-a-test".to_string());
