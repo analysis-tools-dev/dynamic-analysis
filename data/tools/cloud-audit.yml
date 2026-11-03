@@ -1,0 +1,16 @@
+name: cloud-audit
+categories:
+  - linter
+tags:
+  - cloud
+license: MIT
+types:
+  - cli
+source: 'https://github.com/gebalamariusz/cloud-audit'
+homepage: 'https://haitmg.pl'
+description: >-
+  Fast, opinionated AWS security scanner with 47 curated checks.
+  Each finding includes copy-paste remediation in both AWS CLI and Terraform.
+  Features attack chain detection that correlates individual findings into
+  multi-step exploitable attack paths, and a built-in diff command
+  for tracking security posture changes between scans.
